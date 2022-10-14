@@ -1,0 +1,7 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+@import url(../root/root.css);  /* Глобальные кастомные свойства (цвета) */
+@import url(../blocks/background/background.css);
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/font-test/font-test.css);
