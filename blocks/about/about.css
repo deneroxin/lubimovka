@@ -1,0 +1,5 @@
+.about {
+  background-color: var(--color-accent);
+  min-height: 398px;
+  padding-left: calc(0.25 * 100vw);
+}

@@ -1,0 +1,11 @@
+.footer__developers {
+  grid-area: develop;
+  font-family: 'Formular';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  max-width: 398px;
+  display: flex;
+  justify-self: end;
+}

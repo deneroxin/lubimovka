@@ -1,0 +1,9 @@
+.footer__item-link {
+  font-family: 'Formular';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-coal);
+  text-decoration: none;
+}

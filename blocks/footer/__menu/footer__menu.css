@@ -1,0 +1,14 @@
+.footer__menu {
+  margin: 0;
+  padding: 0;
+  grid-area: menu-start;
+  max-width: max-content;
+}
+.footer__menu:nth-last-of-type(2) {
+  grid-area: menu-center;
+}
+
+.footer__menu:last-of-type {
+  grid-area: menu-end;
+  max-height: none;
+}

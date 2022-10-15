@@ -1,0 +1,13 @@
+.footer__menu-item {
+  list-style-type: none;
+  padding-bottom: 15px;
+  padding-right: 102px;
+}
+
+.footer__menu-item:last-of-type {
+  padding-bottom: 0;
+}
+
+.footer__menu:last-of-type > .footer__menu-item {
+  padding-right: 0;
+}

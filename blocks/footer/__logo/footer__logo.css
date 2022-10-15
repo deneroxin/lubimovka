@@ -1,0 +1,9 @@
+.footer__logo {
+  grid-area: logo;
+  margin-right: 82px;
+  width: 93px;
+  height: 80.36px;
+  grid-area: logo;
+  background-image: url(../../../images/footer__logo.svg);
+  background-size: cover;
+}

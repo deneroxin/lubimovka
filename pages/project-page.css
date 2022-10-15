@@ -1,7 +1,34 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
 @import url(../root/root.css);  /* Глобальные кастомные свойства (цвета) */
-@import url(../blocks/background/background.css);
 @import url(../blocks/page/page.css);
 
-@import url(../blocks/font-test/font-test.css);
+@import url(../blocks/front-page/front-page.css);
+@import url(../blocks/front-page/__link/front-page__link.css);
+@import url(../blocks/front-page/__title/front-page__title.css);
+@import url(../blocks/front-page/__subtitle/front-page__subtitle.css);
+@import url(../blocks/front-page/__image/front-page__image.css);
+
+@import url(../blocks/about/about.css);
+@import url(../blocks/about/__title/about__title.css);
+@import url(../blocks/about/__subtitle/about__subtitle.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__logo/footer__logo.css);
+@import url(../blocks/footer/__partners/footer__partners.css);
+@import url(../blocks/footer/__partners-title/footer__partners-title.css);
+@import url(../blocks/footer/__partner-logo/footer__partner-logo.css);
+@import url(../blocks/footer/__logo-image/footer__logo-image.css);
+@import url(../blocks/footer/__address/footer__address.css);
+@import url(../blocks/footer/__place-name/footer__place-name.css);
+@import url(../blocks/footer/__place-address/footer__place-address.css);
+@import url(../blocks/footer/__menu/footer__menu.css);
+@import url(../blocks/footer/__menu-item/footer__menu-item.css);
+@import url(../blocks/footer/__item-link/footer__item-link.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/__copy/footer__copy.css);
+@import url(../blocks/footer/__policy/footer__policy.css);
+@import url(../blocks/footer/__developers/footer__developers.css);
+@import url(../blocks/footer/__developer/footer__developer.css);
+@import url(../blocks/footer/__design-logo/footer__design-logo.css);
+@import url(../blocks/footer/__developer-link/footer__developer-link.css);

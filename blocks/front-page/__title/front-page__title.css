@@ -1,0 +1,14 @@
+.front-page__title {
+  padding-top: 58px;
+  max-width: 450px;
+  width: 100%;
+  min-height: 140px;
+  margin: 0;
+  font-family: 'Neue Machina';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 70px;
+  letter-spacing: -0.01em;
+  color: (--color-coal);
+}

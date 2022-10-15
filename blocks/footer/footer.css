@@ -1,0 +1,11 @@
+.footer {
+  padding: 42px 92px 54px 32px;
+  background-color: var(--color-main-background);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, max-content));
+  row-gap: 22px;
+  grid-template-areas:
+  "logo partners partners . ."
+  ". address menu-start menu-center menu-end"
+  ". copyright . develop develop";
+}
