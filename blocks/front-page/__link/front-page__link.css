@@ -1,21 +1,16 @@
 .front-page__link {
-  width: 120px;
-  height: 32px;
-  border-bottom: 1px solid var(--color-coal);
-  border-right: 1px solid var(--color-coal);
   display: flex;
-  align-items: flex-end;
-  font-family: 'Formular';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 14px;
+  align-items: center;
+	text-transform: uppercase;
   text-align: right;
-  text-decoration: none;
   color: var(--color-coal);
-  background-image: url(../../../images/arrow-left.svg);
-  background-repeat: no-repeat;
-  background-position: right -1px center;
-  padding: 0 30px 9px 10px;
   box-sizing: border-box;
+  transition: all .4 ease;
+  z-index: 2;
+  height: 100%;
+}
+
+.front-page__button:hover > .front-page__link {
+	color: var(--color-main-background);
+	transition-delay: .35s;
 }

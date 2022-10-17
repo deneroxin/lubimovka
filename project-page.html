@@ -18,7 +18,14 @@
       <main>
 
         <section class="front-page">
-          <a class="front-page__link" href="#">ПРОЕКТЫ</a>
+          <div class="front-page__button-logo">
+            <img class="front-page__logo" src="images/head__logo.svg" alt="Лого фестиваля">
+            <a class="front-page__button"  href="#">
+              <div class="front-page__link">Проекты</div>
+              <span class="front-page__link-arrow">&larr;</span>
+              <div class="front-page__link-hover"></div>
+            </a>
+          </div>
           <h1 class="front-page__title">Любимовка. Ещё</h1>
           <p class="front-page__subtitle">Межсезонные читки и обсуждение пьес из списка отмеченных отборщиками Любимовки.</p>
           <img class="front-page__image" src="images/front-page__background.png" alt="Зрительный зал">
@@ -44,12 +51,14 @@
           <p class="footer__partners-title">Генеральные партнеры</p>
           <a class="footer__partner-logo" href="#">
             <img class="footer__logo-image" src="images/footer__prohorov.svg" alt="Лого фонда Михаила Прохорова">
+            <p class="footer__logo-caption">Генеральный партнер</p>
           </a>
           <a class="footer__partner-logo" href="#">
             <img class="footer__logo-image" src="images/footer__mesbrew.svg" alt="Лого Mosbrew">
           </a>
           <a class="footer__partner-logo" href="#">
             <img class="footer__logo-image" src="images/footer__sbtg.svg" alt="Лого SBTG.ru">
+            <p class="footer__logo-caption">Онлайн-трансляции</p>
           </a>
           <a class="footer__partner-logo" href="#">
             <img class="footer__logo-image" src="images/footer__how-about-to-talk.svg" alt="Лого А поговорить?">
@@ -83,14 +92,17 @@
           <li class="footer__menu-item"><a class="footer__item-link" href="#">Эхо Любимовки</a></li>
         </ul>
         <div class="footer__copyright">
+          <div class="footer__line"></div>
           <p class="footer__copy">&copy; Любимовка, 2022</p>
           <a class="footer__policy" href="#">Политика конфиденциальности</a>
         </div>
         <div class="footer__developers">
-          <img class="footer__design-logo" src="images/footer__design-logo.svg" alt="Логотип shishki.collective">
-          <p class="footer__developer">дизайн сайта —
-            <a class="footer__developer-link" href="#">shishki.collective</a>
-          </p>
+          <div class="footer__design">
+            <img class="footer__design-logo" src="images/footer__design-logo.svg" alt="Логотип shishki.collective">
+            <p class="footer__developer">дизайн сайта —
+              <a class="footer__developer-link" href="#">shishki.collective</a>
+            </p>
+          </div>
           <p class="footer__developer">вёрстка и разработака — студенты
             <a class="footer__developer-link" href="#">Яндекс.Практикума</a>
           </p>

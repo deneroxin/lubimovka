@@ -1,3 +1,14 @@
 .footer__partner-logo {
   text-decoration: none;
 }
+
+@media screen and (max-width: 630px) {
+  .footer__partner-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 182.5px;
+    min-height: 118.5px;
+    align-self: center;
+  }
+}

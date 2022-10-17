@@ -1,4 +1,11 @@
 .footer__address {
   grid-area: address;
-  min-width: 570px;
+  min-width: calc(.396 * 100vw);
+}
+
+@media screen and (max-width: 1280px) {
+  .footer__address {
+    min-width: calc(.208 * 100vw);
+    padding-left: 24px;
+  }
 }

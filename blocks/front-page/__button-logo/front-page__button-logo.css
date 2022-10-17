@@ -1,0 +1,14 @@
+.front-page__button-logo {
+  display: flex;
+  padding-left: 24px;
+  align-items: center;
+  width: 120px;
+  height: 32px;
+}
+
+@media screen and (max-width: 870px) {
+  .front-page__button-logo {
+    height: 43px;
+    width: 182px;
+  }
+}

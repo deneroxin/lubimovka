@@ -1,9 +1,18 @@
 .footer__logo {
   grid-area: logo;
-  margin-right: 82px;
-  width: 93px;
-  height: 80.36px;
+  margin-right: calc(.0569 * 100vw);
+  width: calc(.0646 * 100vw);
+  height: calc(.0558 * 100vw);
   grid-area: logo;
   background-image: url(../../../images/footer__logo.svg);
   background-size: cover;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__logo {
+    width: calc(.2247 * 100vw);
+    height: calc(.1941 * 100vw);
+    margin-left: 24px;
+    margin-right: 0;
+  }
 }

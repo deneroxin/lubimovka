@@ -12,3 +12,11 @@
   letter-spacing: -0.01em;
   color: var(--color-coal);
 }
+
+@media screen and (max-width: 870px) {
+  .about__title {
+    padding-top: 56px;
+    max-width: 366px;
+    margin: 0 auto;
+  }
+}

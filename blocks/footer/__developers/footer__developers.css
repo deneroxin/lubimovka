@@ -1,11 +1,20 @@
 .footer__developers {
+  padding-top: 27px;
   grid-area: develop;
   font-family: 'Formular';
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 17px;
-  max-width: 398px;
+  min-width: 398px;
   display: flex;
   justify-self: end;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__developers {
+    flex-direction: column;
+    justify-self: start;
+    padding-left: 24px;
+  }
 }

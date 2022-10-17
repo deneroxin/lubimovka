@@ -9,3 +9,9 @@
   letter-spacing: -0.01em;
   color: var(--color-coal);
 }
+
+@media screen  and (max-width: 1030px) {
+  .footer__place-name {
+    padding-bottom: 8px;
+  }
+}

@@ -2,3 +2,10 @@
   max-height: 35px;
   mix-blend-mode: multiply;
 }
+
+@media screen and (max-width: 630px) {
+  .footer__logo-image {
+    min-height: 37px;
+    min-width: 97px;
+  }
+}

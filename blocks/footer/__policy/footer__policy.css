@@ -1,4 +1,47 @@
 .footer__policy {
   text-decoration: none;
   color: var(--color-coal);
+  padding-left: 7.5px;
+}
+
+.footer__policy:hover {
+  padding-left: 0;
+}
+
+.footer__policy:hover:before {
+  content: "( ";
+}
+
+.footer__policy:hover:after {
+  content: " )";
+}
+
+@media screen and (max-width: 1220px) {
+  .footer__policy {
+    padding-left: 16px;
+    padding-top: 10px;
+  }
+  .footer__policy:hover {
+    padding-left: 8.4px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__policy {
+    padding-top: 10px;
+    padding-left: 24px;
+    text-decoration: underline;
+  }
+
+  .footer__policy:hover {
+    padding-left: 24px;
+  }
+
+  .footer__policy:hover:before {
+    content: "";
+  }
+
+  .footer__policy:hover:after {
+    content: "";
+  }
 }

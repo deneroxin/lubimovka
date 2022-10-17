@@ -1,4 +1,5 @@
 .footer__copyright {
+  padding-top: 27px;
   grid-area: copyright;
   display: flex;
   font-family: 'Formular';
@@ -7,4 +8,11 @@
   font-size: 14px;
   line-height: 17px;
   color: var(--color-coal);
+}
+
+@media screen and (max-width: 1220px) {
+  .footer__copyright {
+    flex-direction: column;
+    padding-top: 30px;
+  }
 }

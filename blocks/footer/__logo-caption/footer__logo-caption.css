@@ -1,0 +1,20 @@
+.footer__logo-caption {
+  display: none;
+}
+
+@media screen and (max-width: 630px) {
+  .footer__logo-caption {
+    margin: 0;
+    padding-top: 18px;
+    width: 100%;
+    display: block;
+    font-family: 'Formular';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    font-feature-settings: 'ss01' on;
+    color: var(--color-coal);
+  }
+}

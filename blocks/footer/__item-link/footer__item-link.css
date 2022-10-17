@@ -1,9 +1,18 @@
 .footer__item-link {
-  font-family: 'Formular';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: var(--color-coal);
+  display: block;
   text-decoration: none;
+  color: var(--color-coal);
+  padding-left: 9.8px;
+}
+
+.footer__item-link:hover {
+  padding-left: 0;
+}
+
+.footer__item-link:hover:before {
+  content: "( ";
+}
+
+.footer__item-link:hover:after {
+  content: " )";
 }

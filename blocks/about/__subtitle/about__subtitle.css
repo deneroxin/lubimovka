@@ -12,3 +12,10 @@
   font-feature-settings: 'ss01' on;
   color: var(--color-coal);
 }
+
+@media screen and (max-width: 870px) {
+  .about__subtitle {
+    max-width: 305px;
+    margin: 0 auto;
+  }
+}

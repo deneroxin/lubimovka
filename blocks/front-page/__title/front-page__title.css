@@ -1,4 +1,5 @@
 .front-page__title {
+  grid-area: title;
   padding-top: 58px;
   max-width: 450px;
   width: 100%;
@@ -11,4 +12,14 @@
   line-height: 70px;
   letter-spacing: -0.01em;
   color: (--color-coal);
+}
+
+@media screen and (max-width: 870px) {
+  .front-page__title {
+    padding-top: 32px;
+    padding-left: 24px;
+    font-size: 40px;
+    line-height: 40px;
+    min-height: 40px;
+  }
 }

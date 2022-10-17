@@ -1,6 +1,8 @@
 .front-page__subtitle {
+  grid-area: subtitle;
   margin: 0;
   max-width: 420px;
+  min-width: 321px;
   justify-self: end;
   font-family: 'Neue Machina';
   font-style: normal;
@@ -9,4 +11,18 @@
   line-height: 32px;
   letter-spacing: -0.01em;
   color: var(--color-coal);
+}
+
+@media screen and (max-width: 870px) {
+  .front-page__subtitle {
+    padding-bottom: 14px;
+    padding-right: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    box-sizing: border-box;
+    width: calc(.7343 * 100vw);
+  }
+  .front-page__subtitle::after {
+    content: " Можно слушать, обсуждать и даже участвовать.";
+  }
 }
