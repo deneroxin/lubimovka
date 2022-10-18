@@ -1,0 +1,14 @@
+.gallery {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 145px 0 122px;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    padding: 100px 0 100px;
+  }
+
+}

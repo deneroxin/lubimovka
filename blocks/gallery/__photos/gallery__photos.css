@@ -1,0 +1,13 @@
+.gallery__photos {
+  max-width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(359px, 1fr));
+  gap: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery__photos {
+    grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+  }
+}
