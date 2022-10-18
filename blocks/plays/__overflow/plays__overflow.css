@@ -1,0 +1,7 @@
+@media screen and (max-width: 1320px) {
+  .plays__overflow {
+    max-width: 1440px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}

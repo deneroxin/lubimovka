@@ -1,0 +1,15 @@
+.plays {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 145px 0 122px;
+}
+
+@media screen and (max-width: 768px) {
+  .plays {
+    padding: 100px 0 100px;
+  }
+
+}

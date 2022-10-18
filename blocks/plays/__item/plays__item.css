@@ -1,0 +1,10 @@
+.plays__item {
+  margin: 0;
+  width: 240px;
+  height: 412px;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
