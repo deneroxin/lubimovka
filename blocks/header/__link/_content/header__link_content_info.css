@@ -1,0 +1,7 @@
+.header__link_content_info {
+  margin-right: 44px;
+}
+
+.header__link_content_info:last-child {
+  margin: 0;
+}

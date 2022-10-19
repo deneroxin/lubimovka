@@ -1,0 +1,25 @@
+.header__projects {
+  position: absolute;
+  left: 30px;
+  top: 94px;
+
+  width: 120px;
+  height: 32px;
+
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+
+  border: none;
+  border-bottom: 1px solid #242424;
+  border-right: 1px solid #242424;
+
+  background-color: #ECEBE8;
+}
+
+@media screen and (max-width: 1420px) {
+  .header__projects {
+    position: static;
+    margin-left: 20px;
+  }
+}

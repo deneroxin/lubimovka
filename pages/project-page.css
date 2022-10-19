@@ -5,3 +5,15 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/font-test/font-test.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__menu/header__menu.css);
+@import url(../blocks/header/__nav/header__nav.css);
+@import url(../blocks/header/__nav/_content/header__nav_content_social.css);
+@import url(../blocks/header/__link/header__link.css);
+@import url(../blocks/header/__link/_content/header__link_content_info.css);
+@import url(../blocks/header/__link/_content/header__link_content_social.css);
+@import url(../blocks/header/__link/_content/header__link_content_support.css);
+@import url(../blocks/header/_support/header__support.css);
+@import url(../blocks/header/projects/header__projects.css);
