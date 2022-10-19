@@ -1,0 +1,15 @@
+.playbill {
+  margin: 130px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 75px;
+}
+
+@media (max-width: 480px) {
+  .playbill {
+    margin-top: 100px;
+    row-gap: 34px;
+    /* box-sizing: border-box; */
+  }
+}

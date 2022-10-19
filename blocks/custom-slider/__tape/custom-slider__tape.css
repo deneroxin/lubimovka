@@ -1,0 +1,4 @@
+.custom-slider__tape {
+  --shift: 0;
+  transform: translate(var(--shift), 0);
+}

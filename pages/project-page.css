@@ -5,3 +5,30 @@
 @import url(../blocks/page/page.css);
 
 @import url(../blocks/font-test/font-test.css);
+
+@import url(../blocks/announcement/announcement.css);
+@import url(../blocks/announcement/__image/announcement__image.css);
+@import url(../blocks/announcement/__date/announcement__date.css);
+@import url(../blocks/announcement/__time/announcement__time.css);
+@import url(../blocks/announcement/__title/announcement__title.css);
+@import url(../blocks/announcement/__authors/announcement__authors.css);
+@import url(../blocks/announcement/__playwrite/announcement__playwrite.css);
+@import url(../blocks/announcement/__director/announcement__director.css);
+@import url(../blocks/announcement/__info/announcement__info.css);
+@import url(../blocks/announcement/__buttons/announcement__buttons.css);
+
+@import url(../blocks/button/_type/button_type_left.css);
+
+@import url(../blocks/custom-slider/custom-slider.css);
+@import url(../blocks/custom-slider/__tape/custom-slider__tape.css);
+@import url(../blocks/custom-slider/__tape/_use-transition/custom-slider__tape_use-transition.css);
+@import url(../blocks/custom-slider/__button/custom-slider__button.css);
+@import url(../blocks/custom-slider/__button/_action/custom-slider__button_action_next.css);
+@import url(../blocks/custom-slider/__button/_action/custom-slider__button_action_prev.css);
+@import url(../blocks/custom-slider/__button/_visible/custom-slider__button_visible.css);
+
+@import url(../blocks/playbill/playbill.css);
+@import url(../blocks/playbill/__title/playbill__title.css);
+@import url(../blocks/playbill/__title/_type/playbill__title_type_aside.css);
+@import url(../blocks/playbill/__slider/playbill__slider.css);
+@import url(../blocks/playbill/__container/playbill__container.css);

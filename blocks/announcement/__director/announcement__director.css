@@ -1,0 +1,11 @@
+.announcement__director {
+  margin: 0 0 16px 30px;
+  grid-area: director;
+}
+
+@media (max-width: 480px) {
+  .announcement__director {
+    margin: 0 0 8px 0;
+  }
+}
+

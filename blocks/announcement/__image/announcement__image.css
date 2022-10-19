@@ -1,0 +1,14 @@
+.announcement__image {
+  grid-area: image;
+  width: 120px;
+  height: 161px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 480px) {
+  .announcement__image {
+    width: 93px;
+    height: 123px;
+  }
+}

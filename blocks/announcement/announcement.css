@@ -1,0 +1,42 @@
+.announcement {
+  position: relative;
+  width: 420px;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-areas:
+    "image date      time"
+    "image title     title"
+    "image playwrite playwrite"
+    "image director  director"
+    "image info      ..."
+    "...   buttons   buttons";
+  color: var(--color-coal);
+  flex-shrink: 0;
+}
+
+.announcement:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 1px;
+  height: 90%;
+  background-color: var(--color-coal);
+}
+
+@media (max-width: 480px) {
+  .announcement {
+    width: 100%;
+    max-width: 364px;
+    padding: 0 calc((100vw - 364px) / 2) 0;
+    grid-template-columns: auto 4fr 3fr;
+    column-gap: 29px;
+  }
+  .announcement:not(:first-child)::before {
+    top: -32px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+  }
+}

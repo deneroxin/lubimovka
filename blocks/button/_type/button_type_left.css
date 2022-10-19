@@ -1,0 +1,51 @@
+.button_type_left {
+  font-family: 'Formular';
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: light;
+  text-transform: uppercase;
+  text-align: left;
+  position: relative;
+  color: var(--color-coal);
+  border-left: 1px solid var(--color-coal);
+  border-bottom: 1px solid var(--color-coal);
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url('./arrow-right-coal.svg');
+  transition: box-shadow .1s linear;
+}
+
+.button_type_left, .button_type_left::before {
+  width: 154px;
+  box-sizing: border-box;
+  padding: 8px 0 8px 25px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px 20px;
+}
+
+.button_type_left::before {
+  height: 100%;
+  content: attr(data-before);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  color: var(--color-snow-white);
+  border: none;
+  background-color: var(--color-coal);
+  background-image: url('./arrow-right-white.svg');
+  clip-path: inset(0 154px 0 0);
+  transition: clip-path .3s ease-in;
+}
+
+.button_type_left:hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.button_type_left:hover:active::before {
+  clip-path: none;
+  box-shadow: 0 0 2px 4px var(--color-coal);
+}

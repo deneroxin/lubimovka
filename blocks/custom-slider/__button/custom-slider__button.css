@@ -1,0 +1,56 @@
+.custom-slider__button {
+  margin: 0;
+  padding: 0;
+  top: var(--custom-slider__vertical-position);
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.custom-slider__button, .custom-slider__button::before, .custom-slider__button::after {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: var(--custom-slider__button-size);
+  height: var(--custom-slider__button-size);
+  border: none;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--custom-slider__arrow-size) var(--custom-slider__arrow-size);
+}
+
+.custom-slider__button::before, .custom-slider__button::after {
+  content: '';
+  top: 0;
+}
+
+.custom-slider__button::before {
+  transition: transform .5s ease-out .1s,
+              border-top .5s ease .2s,
+              border-bottom .5s ease .2s;
+}
+
+.custom-slider__button::after {
+  opacity: 0;
+  background-color: var(--color-coal);
+  transition: opacity .2s ease;
+}
+
+
+.custom-slider__button:hover::before {
+  border-top: 2px solid var(--color-coal);
+  border-bottom: 2px solid var(--color-coal);
+  transition: transform .3s ease,
+              border-top .5s ease .2s,
+              border-bottom .5s ease .2s;
+}
+
+.custom-slider__button:hover::after {
+  opacity: 1;
+  transition: opacity .2s ease .3s;
+}
+
+.custom-slider__button:hover:active::after {
+  transition: none;
+  box-shadow: 0 0 2px 4px var(--color-coal);
+}
