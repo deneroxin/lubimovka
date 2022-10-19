@@ -11,16 +11,13 @@ class CustomSlider {
 
   handleFocusIn(evt) {
     const offset = this.getOffset(evt.target, this.tape);
-    if (offset + this.x > this.boxWidth - this.buf || offset + this.x < 0) {
-      this.scroll(this.boxWidth / 2 - (offset + this.x));
-    }
+    this.scroll(this.boxWidth / 2 - (offset + this.x));
   }
 
-  constructor(box, childClass, buf = 100, hasButtons = true) {
+  constructor(box, childClass, hasButtons = true) {
     box.dat = this;
     this.box = box;
     this.tape = box.querySelector('.custom-slider__tape');
-    this.buf = buf;
     this.hasButtons = hasButtons;
     this.isButtonVisible = [false, null, false];
     const child = this.tape.querySelector(childClass);

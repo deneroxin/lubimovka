@@ -17,7 +17,7 @@
   transition: box-shadow .1s linear;
 }
 
-.button_type_left:focus {
+.button_type_left:focus-visible {
   outline: 2px dashed var(--color-accent);
 }
 
