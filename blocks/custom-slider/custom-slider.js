@@ -1,9 +1,26 @@
 class CustomSlider {
 
-  constructor(box, childClass, hasButtons = true) {
+  getOffset(el, parent) {
+    let offset = 0;
+    while (el !== parent) {
+      offset += el.offsetLeft;
+      el = el.offsetParent;
+    }
+    return offset;
+  }
+
+  handleFocusIn(evt) {
+    const offset = this.getOffset(evt.target, this.tape);
+    if (offset + this.x > this.boxWidth - this.buf || offset + this.x < 0) {
+      this.scroll(this.boxWidth / 2 - (offset + this.x));
+    }
+  }
+
+  constructor(box, childClass, buf = 100, hasButtons = true) {
     box.dat = this;
     this.box = box;
     this.tape = box.querySelector('.custom-slider__tape');
+    this.buf = buf;
     this.hasButtons = hasButtons;
     this.isButtonVisible = [false, false];
     const child = this.tape.querySelector(childClass);
@@ -33,6 +50,7 @@ class CustomSlider {
     this.up = (() => this.handlePointerUp());
     this.cancel = (() => this.handlePointerCancel());
     this.click = (evt => this.handleClick(evt));
+    this.focusin = (evt => this.handleFocusIn(evt));
     window.addEventListener('resize', () => this.handleResize());
     this.active = false;
     this.handleResize();
@@ -48,7 +66,7 @@ class CustomSlider {
       this.pushed = false;
       this.box.addEventListener('pointerdown', this.down);
       this.box.addEventListener('click', this.click, true);
-        console.log(this.isButtonVisible);
+      this.tape.addEventListener('focusin', this.focusin);
       this.scroll(0);
       return;
     }
@@ -57,6 +75,7 @@ class CustomSlider {
       this.hideButton(1);
       this.box.removeEventListener('pointerdown', this.down);
       this.box.removeEventListener('click', this.click, true);
+      this.tape.removeEventListener('focusin', this.focusin);
     }
   }
 

@@ -1,6 +1,6 @@
 .custom-slider__button_action_prev {
   background-image: url(../../../button/_type/arrow-left-coal.svg);
-  left: 0;
+  left: 4px;
 }
 
 .custom-slider__button_action_prev, .custom-slider__button_action_prev::before {
