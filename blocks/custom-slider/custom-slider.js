@@ -22,7 +22,7 @@ class CustomSlider {
     this.tape = box.querySelector('.custom-slider__tape');
     this.buf = buf;
     this.hasButtons = hasButtons;
-    this.isButtonVisible = [false, false];
+    this.isButtonVisible = [false, null, false];
     const child = this.tape.querySelector(childClass);
     const gap = Number(window.getComputedStyle(this.tape).getPropertyValue('gap').replace('px',''));
     const childWidth = Number(window.getComputedStyle(child).getPropertyValue('width').replace('px',''));
@@ -84,18 +84,16 @@ class CustomSlider {
   }
 
   showButton(buttonKind) {
-    const buttonIdx = (buttonKind >> 1) & 1;
-    if (this.hasButtons && !this.isButtonVisible[buttonIdx] ) {
+    if (this.hasButtons && !this.isButtonVisible[buttonKind + 1] ) {
       this.chooseButton(buttonKind).classList.add('custom-slider__button_visible');
-      this.isButtonVisible[buttonIdx] = true;
+      this.isButtonVisible[buttonKind + 1] = true;
     }
   }
 
   hideButton(buttonKind) {
-    const buttonIdx = (buttonKind >> 1) & 1;
-    if (this.isButtonVisible[buttonIdx]) {
+    if (this.isButtonVisible[buttonKind + 1]) {
       this.chooseButton(buttonKind).classList.remove('custom-slider__button_visible');
-      this.isButtonVisible[buttonIdx] = false;
+      this.isButtonVisible[buttonKind + 1] = false;
     }
   }
 

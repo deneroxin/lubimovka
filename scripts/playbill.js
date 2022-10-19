@@ -7,4 +7,4 @@ const playbillSlider = document.querySelector('.playbill__slider');
 const playbillAnnouncementButton = playbillSlider.querySelector('.announcement').querySelector('.button_type_left');
 const playbillAnnouncementButtonWidth =
   Number(window.getComputedStyle(playbillAnnouncementButton).getPropertyValue('width').replace('px',''));
-new CustomSlider(playbillSlider, '.announcement', playbillAnnouncementButtonWidth + 4);
+new CustomSlider(playbillSlider, '.announcement', /*playbillAnnouncementButtonWidth + 4*/ 160);

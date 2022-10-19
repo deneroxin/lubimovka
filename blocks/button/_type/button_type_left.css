@@ -17,6 +17,10 @@
   transition: box-shadow .1s linear;
 }
 
+.button_type_left:focus {
+  outline: 2px dashed var(--color-accent);
+}
+
 .button_type_left, .button_type_left::before {
   width: 154px;
   box-sizing: border-box;
@@ -31,21 +35,21 @@
   content: attr(data-before);
   position: absolute;
   top: 0;
-  left: 0;
+  left: -1px;
   display: block;
   color: var(--color-snow-white);
   border: none;
   background-color: var(--color-coal);
   background-image: url('./arrow-right-white.svg');
-  clip-path: inset(0 154px 0 0);
+  clip-path: inset(0 100% 0 0);
   transition: clip-path .3s ease-in;
 }
 
-.button_type_left:hover::before {
+.button_type_left:hover::before, .button_type_left:focus::before {
   clip-path: inset(0 0 0 0);
 }
 
-.button_type_left:hover:active::before {
+.button_type_left:hover:active::before, .button_type_left:focus:active::before {
   clip-path: none;
   box-shadow: 0 0 2px 4px var(--color-coal);
 }

@@ -11,7 +11,7 @@
   left: 0;
 }
 
-.custom-slider__button_action_next:hover::before {
+.custom-slider__button_action_next:hover::before, .custom-slider__button_action_next:focus::before {
   transform: rotate(180deg);
 }
 
@@ -19,6 +19,6 @@
   left: 0;
 }
 
-.custom-slider__button_action_next:hover::after {
+.custom-slider__button_action_next:hover::after, .custom-slider__button_action_next:focus::after {
   background-image: url(../../../button/_type/arrow-right-white.svg);
 }
