@@ -21,6 +21,7 @@ class CustomSlider {
 
   constructor(box, interactiveClass, hasButtons = true) {
     box.dat = this;
+    box.addEventListener('scroll', evt => evt.currentTarget.scrollLeft = 0);
     this.box = box;
     this.tape = box.querySelector('.custom-slider__tape');
     this.interactiveClass = interactiveClass;
