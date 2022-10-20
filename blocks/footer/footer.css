@@ -1,0 +1,31 @@
+.footer {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 42px 92px 54px 32px;
+  background-color: var(--color-main-background);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, max-content));
+  row-gap: 22px;
+  grid-template-areas:
+  "logo partners partners partners partners"
+  ". address menu-start menu-center menu-end"
+  ". copyright develop develop develop";
+}
+
+@media screen and (max-width: 1030px) {
+  .footer {
+    padding: 56px 0 74px;
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+    row-gap: 33px;
+    column-gap: 48px;
+    grid-template-areas:
+    "logo ."
+    "address address"
+    "menu-start menu-center"
+    "menu-end menu-end"
+    "partners partners"
+    "copyright copyright"
+    "develop develop";
+  }
+}

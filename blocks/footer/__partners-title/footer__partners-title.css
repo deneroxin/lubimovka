@@ -1,0 +1,18 @@
+.footer__partners-title {
+  display: block;
+  margin: 0;
+  max-width: 120px;
+  width: 100%;
+  font-family: 'Formular';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-coal);
+}
+
+@media screen and (max-width: 630px) {
+  .footer__partners-title {
+    display: none;
+  }
+}

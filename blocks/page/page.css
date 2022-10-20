@@ -1,9 +1,12 @@
-/*
-Задает габариты всей страницы в целом
-*/
 .page {
-  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
   max-width: 1440px;
   width: 100%;
   touch-action: pan-y;
+  margin: 0 auto;
+  font-family: 'Formular', 'Arial', sans-serif;
+  font-style: light;
+  color: var(--color-coal);
 }

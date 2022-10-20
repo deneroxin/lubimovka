@@ -1,0 +1,12 @@
+.front-page__logo {
+  display: none;
+}
+
+@media screen and (max-width: 870px) {
+  .front-page__logo {
+    display: block;
+    width: 43px;
+    height: 43px;
+    margin-right: 19px;
+  }
+}
