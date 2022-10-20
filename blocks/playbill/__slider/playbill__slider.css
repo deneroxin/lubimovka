@@ -2,6 +2,7 @@
   position: relative;
   padding-bottom: 4px;
   width: 100%;
+  margin: 0 auto;
   --custom-slider__active: 1;
   --custom-slider__vertical-position: 75%;
   --custom-slider__button-size: 50px;

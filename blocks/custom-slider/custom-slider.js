@@ -10,21 +10,27 @@ class CustomSlider {
   }
 
   handleFocusIn(evt) {
-    const offset = this.getOffset(evt.target, this.tape);
-    this.scroll(this.boxWidth / 2 - (offset + this.x));
+    if (this.mouseFocus) {
+      this.mouseFocus = false;
+    } else {
+      const offset = this.getOffset(evt.target, this.tape);
+      this.turnTransitionOn();
+      this.scroll(this.boxWidth / 2 - (offset + this.x));
+    }
   }
 
-  constructor(box, childClass, hasButtons = true) {
+  constructor(box, interactiveClass, hasButtons = true) {
     box.dat = this;
     this.box = box;
     this.tape = box.querySelector('.custom-slider__tape');
+    this.interactiveClass = interactiveClass;
     this.hasButtons = hasButtons;
     this.isButtonVisible = [false, null, false];
-    const child = this.tape.querySelector(childClass);
+    const child = this.tape.children[0];
     const gap = Number(window.getComputedStyle(this.tape).getPropertyValue('gap').replace('px',''));
     const childWidth = Number(window.getComputedStyle(child).getPropertyValue('width').replace('px',''));
     this.step = gap + childWidth;
-    this.width = (gap + childWidth) * this.tape.children.length - gap;
+    this.tapeWidth = (gap + childWidth) * this.tape.children.length - gap;
     this.prevButton = this.box.querySelector('.custom-slider__button_action_prev');
     this.nextButton = this.box.querySelector('.custom-slider__button_action_next');
     this.prevButton.addEventListener('click', () => {
@@ -42,12 +48,14 @@ class CustomSlider {
     this.m = 0.2;
     this.pushX = null;
     this.vClick = 0;
+    this.x = this.v = 0;
     this.down = (evt => this.handlePointerDown(evt));
     this.move = (evt => this.handlePointerMove(evt));
     this.up = (() => this.handlePointerUp());
     this.cancel = (() => this.handlePointerCancel());
     this.click = (evt => this.handleClick(evt));
     this.focusin = (evt => this.handleFocusIn(evt));
+    this.mouse = false;
     window.addEventListener('resize', () => this.handleResize());
     this.active = false;
     this.handleResize();
@@ -55,19 +63,18 @@ class CustomSlider {
   }
 
   handleResize() {
-    const lastActive = this.active;
     this.active = (window.getComputedStyle(this.box).getPropertyValue('--custom-slider__active') == 1);
     this.boxWidth = Number(window.getComputedStyle(this.box).getPropertyValue('width').replace('px',''));
-    if (this.active && !lastActive) {
-      this.x = this.v = 0;
+    this.active2 = (this.tapeWidth > this.boxWidth);
+    if (this.active && this.active2) {
       this.pushed = false;
       this.box.addEventListener('pointerdown', this.down);
       this.box.addEventListener('click', this.click, true);
       this.tape.addEventListener('focusin', this.focusin);
       this.scroll(0);
       return;
-    }
-    if (!this.active && lastActive) {
+    } else {
+      this.box.style.width = `${this.tapeWidth}px`;
       this.hideButton(-1);
       this.hideButton(1);
       this.box.removeEventListener('pointerdown', this.down);
@@ -81,7 +88,7 @@ class CustomSlider {
   }
 
   showButton(buttonKind) {
-    if (this.hasButtons && !this.isButtonVisible[buttonKind + 1] ) {
+    if (this.active && this.active2 && this.hasButtons && !this.isButtonVisible[buttonKind + 1]) {
       this.chooseButton(buttonKind).classList.add('custom-slider__button_visible');
       this.isButtonVisible[buttonKind + 1] = true;
     }
@@ -104,10 +111,10 @@ class CustomSlider {
 
   scroll(step) {
     this.x += step;
-    if (this.width + this.x > this.boxWidth) {
+    if (this.x + this.tapeWidth > this.boxWidth) {
       this.showButton(1);
     } else {
-      this.x = this.boxWidth - this.width;
+      this.x = this.boxWidth - this.tapeWidth;
       this.v = 0;
       this.hideButton(1);
     }
@@ -134,7 +141,7 @@ class CustomSlider {
   }
 
   handlePointerDown(evt) {
-    evt.preventDefault();
+    if (!evt.target.classList.contains(this.interactiveClass)) evt.preventDefault(); else this.mouseFocus = true;
     this.pushX = evt.clientX;
     this.vClick = this.v;
     this.turnTransitionOff();
@@ -160,7 +167,6 @@ class CustomSlider {
   }
 
   handlePointerMove(evt) {
-    evt.preventDefault();
     if (this.pushed) {
       if (!(evt.buttons & 1)) {
         this.handlePointerCancel();

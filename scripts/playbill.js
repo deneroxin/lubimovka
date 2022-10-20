@@ -3,5 +3,5 @@
 const allTheButtons = Array.from(document.querySelectorAll('.button_type_left'));
 allTheButtons.forEach(button => button.setAttribute('data-before', button.textContent));
 
-const playbillSlider = document.querySelector('.playbill__slider');
-new CustomSlider(playbillSlider, '.announcement');
+const playbillSliders = Array.from(document.querySelectorAll('.playbill__slider'));
+playbillSliders.forEach(el => new CustomSlider(el, 'button_type_left'));
