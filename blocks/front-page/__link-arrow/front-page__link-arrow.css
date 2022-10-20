@@ -1,0 +1,12 @@
+.front-page__link-arrow {
+  font-size: 25px;
+  width: 18px;
+  padding-bottom: 5px;
+  color: var(--color-coal);
+  transition: color .3s ease;
+}
+
+.front-page__button:hover > .front-page__link-arrow {
+  color: var(--color-main-background);
+  transition-delay: .2s;
+}

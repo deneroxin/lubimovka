@@ -1,0 +1,13 @@
+.footer__line {
+  display: none;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__line {
+    display: block;
+    width: 100vw;
+    height: 1px;
+    background: var(--color-coal);
+    margin-bottom: 32px;
+  }
+}
