@@ -14,9 +14,11 @@
       <header class="header">
         <img class="header__logo" src="./images/logo.svg">
 
-        <button class="header__projects">ПРОЕКТЫ</button>
+        <button class="header__projects-button" type="button" aria-label="Показать проекты">ПРОЕКТЫ</button>
 
         <div class="header__menu">
+          <button class="header__menu-button" type="button" aria-label="Открыть/закрыть меню"></button>
+
           <div class="header__menu-container">
             <nav class="header__nav header__nav_content_info">
               <a class="header__link header__link_content_info" href="#">Афиша</a>
@@ -259,7 +261,7 @@
 
     <script src="./blocks/custom-slider/custom-slider.js"></script>
     <script src="./scripts/playbill.js"></script>
-    <script src="./scripts/project-page.js"></script>
+    <script src="./scripts/project-page.js" type="module"></script>
 
   </body>
 </html>

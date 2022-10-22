@@ -1,0 +1,23 @@
+.header__menu-button {
+  display: none;
+}
+
+.header__menu-button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1420px) {
+  .header__menu-button {
+    display: block;
+
+    width: 61px;
+    height: 61px;
+
+    background-color: #242424;
+    background-image: url(../../../images/menu.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 12px;
+    background-position: center;
+  }
+}
+

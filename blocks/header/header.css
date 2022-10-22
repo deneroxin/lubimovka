@@ -20,5 +20,7 @@
    .header {
     position: static;
     justify-content: flex-start;
+
+    border: none;
   }
 }
