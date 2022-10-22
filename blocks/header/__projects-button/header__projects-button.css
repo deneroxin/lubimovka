@@ -1,14 +1,13 @@
-.header__projects {
+.header__projects-button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   position: absolute;
   left: 30px;
   top: 94px;
   z-index: 1;
-
   width: 120px;
+/*
   height: 32px;
 
   margin: 0;
@@ -23,10 +22,10 @@
 
   background-color: #ECEBE8;
 
-  transition: all .35s ease;
+  transition: all .35s ease; */
 }
 
-.header__projects::after {
+/* .header__projects-button::after {
   display: block;
   width: 25px;
   height: 25px;
@@ -40,15 +39,16 @@
   background-image: url(../../../images/arrow-left.svg);
   background-repeat: no-repeat;
   background-color: transparent;
-}
+} */
 
-.header__projects:hover {
+.header__projects-button:hover {
   cursor: pointer;
 }
 
 @media screen and (max-width: 1420px) {
-  .header__projects {
-    position: static;
+  .header__projects-button {
+    position: relative;
     margin-left: 20px;
+    align-self: center;
   }
 }
