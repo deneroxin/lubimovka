@@ -1,0 +1,10 @@
+.playbill__title_type_aside {
+  margin-right: 60px;
+  max-width: 450px;
+}
+
+@media (max-width: 480px) {
+  .playbill__title_type_aside {
+    margin-right: 24px;
+  }
+}

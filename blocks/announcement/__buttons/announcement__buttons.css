@@ -1,0 +1,14 @@
+.announcement__buttons {
+  grid-area: buttons;
+  display: grid;
+  row-gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .announcement__buttons {
+    grid-area: 6 / 1 / span 1 / span 3;
+    margin-top: calc(40px - 16px);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}

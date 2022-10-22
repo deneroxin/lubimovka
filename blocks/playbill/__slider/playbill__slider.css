@@ -1,0 +1,17 @@
+.playbill__slider {
+  position: relative;
+  padding-bottom: 4px;
+  width: 100%;
+  margin: 0 auto;
+  --custom-slider__active: 1;
+  --custom-slider__vertical-position: 75%;
+  --custom-slider__button-size: 50px;
+  --custom-slider__arrow-size: 20px;
+}
+
+@media (max-width: 480px) {
+  .playbill__slider {
+    --custom-slider__active: 0;
+    padding-bottom: 0;
+  }
+}

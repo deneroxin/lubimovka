@@ -1,0 +1,24 @@
+.custom-slider__button_action_next {
+  background-image: url(../../../button/_type/arrow-right-coal.svg);
+  left: calc(100% - var(--custom-slider__button-size) - 4px);
+}
+
+.custom-slider__button_action_next, .custom-slider__button_action_next::before {
+  border-right: 2px solid var(--color-coal);
+}
+
+.custom-slider__button_action_next::before {
+  left: 0;
+}
+
+.custom-slider__button_action_next:hover::before, .custom-slider__button_action_next:focus::before {
+  transform: rotate(180deg);
+}
+
+.custom-slider__button_action_next::after {
+  left: 0;
+}
+
+.custom-slider__button_action_next:hover::after, .custom-slider__button_action_next:focus::after {
+  background-image: url(../../../button/_type/arrow-right-white.svg);
+}

@@ -1,0 +1,9 @@
+.announcement__date {
+  margin: 0;
+  grid-area: date;
+  font-family: 'Formular';
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-weight: light;
+}
