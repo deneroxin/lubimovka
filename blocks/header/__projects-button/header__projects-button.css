@@ -1,4 +1,4 @@
-.header__projects {
+.header__projects-button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -26,7 +26,7 @@
   transition: all .35s ease;
 }
 
-.header__projects::after {
+.header__projects-button::after {
   display: block;
   width: 25px;
   height: 25px;
@@ -42,12 +42,12 @@
   background-color: transparent;
 }
 
-.header__projects:hover {
+.header__projects-button:hover {
   cursor: pointer;
 }
 
 @media screen and (max-width: 1420px) {
-  .header__projects {
+  .header__projects-button {
     position: static;
     margin-left: 20px;
   }
