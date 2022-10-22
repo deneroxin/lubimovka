@@ -1,17 +1,22 @@
 .header__menu {
   width: 100%;
-  min-height: 61px;
-
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: 100%;
-
-  justify-content: space-between;
-  align-items: center;
 }
 
 @media screen and (max-width: 1420px) {
   .header__menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+
+    width: 61px;
+    height: 61px;
+
+    background-color: #242424;
+    background-image: url(../../../images/menu.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 12px;
+    background-position: center;
   }
 }
+
