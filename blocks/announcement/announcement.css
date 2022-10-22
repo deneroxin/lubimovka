@@ -19,7 +19,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -30px;
+  left: calc((var(--column-gap) - 1px) / -2);
   width: 1px;
   height: 90%;
   background-color: var(--color-coal);
@@ -28,8 +28,8 @@
 @media (max-width: 480px) {
   .announcement {
     width: 100%;
-    max-width: 364px;
-    padding: 0 calc((100vw - 364px) / 2) 0;
+    box-sizing: border-box;
+    padding: 0 calc((100vw - 364px) / 2);
     grid-template-columns: auto 4fr 3fr;
     column-gap: 29px;
   }
@@ -38,5 +38,12 @@
     left: 0;
     height: 1px;
     width: 100%;
+  }
+}
+
+@media (max-width: 364px) {
+  .announcement {
+    max-width: none;
+    padding: 0;
   }
 }
