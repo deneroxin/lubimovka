@@ -4,6 +4,12 @@
 @import url(../blocks/background/background.css);
 @import url(../blocks/page/page.css);
 
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/_type/button_type_left.css);
+@import url(../blocks/button/_type/button_type_right.css);
+@import url(../blocks/section-title/section-title.css);
+@import url(../blocks/nav-link/nav-link.css);
+
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__projects-button/header__projects-button.css);
@@ -18,7 +24,6 @@
 @import url(../blocks/header/__link/_content/header__link_content_social.css);
 @import url(../blocks/header/__link/_content/header__link_content_support.css);
 @import url(../blocks/header/__support/header__support.css);
-@import url(../blocks/button/_type/button_type_left.css);
 
 @import url(../blocks/front-page/front-page.css);
 @import url(../blocks/front-page/__button-logo/front-page__button-logo.css);
@@ -55,10 +60,11 @@
 @import url(../blocks/custom-slider/__button/_visible/custom-slider__button_visible.css);
 
 @import url(../blocks/playbill/playbill.css);
+@import url(../blocks/playbill/_type/playbill_type_single.css);
 @import url(../blocks/playbill/__title/playbill__title.css);
-@import url(../blocks/playbill/__title/_type/playbill__title_type_aside.css);
 @import url(../blocks/playbill/__slider/playbill__slider.css);
 @import url(../blocks/playbill/__container/playbill__container.css);
+@import url(../blocks/playbill/__button/playbill__button.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__logo/footer__logo.css);
