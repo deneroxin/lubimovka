@@ -1,4 +1,4 @@
-class CustomSlider {
+export class CustomSlider {
 
   getOffset(el, parent) {
     let offset = 0;
