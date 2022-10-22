@@ -9,4 +9,6 @@
   font-family: 'Formular', 'Arial', sans-serif;
   font-style: light;
   color: var(--color-coal);
+
+  position: relative;
 }
