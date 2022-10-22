@@ -6,17 +6,18 @@
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__projects-button/header__projects-button.css);
 @import url(../blocks/header/__menu/header__menu.css);
+@import url(../blocks/header/__menu-button/header__menu-button.css);
 @import url(../blocks/header/__menu-container/header__menu-container.css);
+@import url(../blocks/header/__menu-container/_opened/header__menu-container_opened.css);
 @import url(../blocks/header/__nav/header__nav.css);
 @import url(../blocks/header/__nav/_content/header__nav_content_social.css);
 @import url(../blocks/header/__link/header__link.css);
 @import url(../blocks/header/__link/_content/header__link_content_info.css);
 @import url(../blocks/header/__link/_content/header__link_content_social.css);
 @import url(../blocks/header/__link/_content/header__link_content_support.css);
-@import url(../blocks/header/_support/header__support.css);
-@import url(../blocks/header/projects/header__projects.css);
-
+@import url(../blocks/header/__support/header__support.css);
 @import url(../blocks/button/_type/button_type_left.css);
 
 @import url(../blocks/front-page/front-page.css);

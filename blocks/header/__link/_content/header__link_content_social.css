@@ -2,6 +2,14 @@
   margin-right: 16px;
 }
 
-.header__link_content_social:last-child {
-  margin: 0;
+@media screen and (min-width: 1420px) {
+  .header__link_content_social:last-child {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  .header__link_content_social {
+    margin-right: 44px;
+  }
 }

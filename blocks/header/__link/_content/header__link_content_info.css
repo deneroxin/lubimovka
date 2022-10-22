@@ -2,6 +2,8 @@
   margin-right: 44px;
 }
 
-.header__link_content_info:last-child {
-  margin: 0;
+@media screen and (min-width: 1420px) {
+  .header__link_content_info:last-child {
+    margin: 0;
+  }
 }
