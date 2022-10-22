@@ -1,0 +1,17 @@
+.open-to-block {
+    position: relative;
+    margin: 100px 200px 169px 48%;
+    color: var(--color-coal);
+}
+
+@media screen and (max-width:1200px) {
+    .open-to-block {
+        margin: 76px 24px 100px 35%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .open-to-block {
+        margin: 76px 24px 100px 57px;
+    }
+}

@@ -1,0 +1,16 @@
+.open-to-block__text {
+    font-family: 'Neue Machina';
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    padding-left: 55px;
+    width: 450px;
+}
+
+@media screen and (max-width:768px) {
+    .open-to-block__text {
+        padding: 0;
+        width: 320px;
+    }
+}
