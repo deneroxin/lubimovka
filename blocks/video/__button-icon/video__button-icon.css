@@ -1,0 +1,5 @@
+.video:hover .video__button-icon,
+.video__button:focus .video__button-icon {
+    fill-opacity: 1;
+    fill: var(--color-main-background);
+}

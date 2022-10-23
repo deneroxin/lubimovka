@@ -1,0 +1,12 @@
+.button-link-block__arrow {
+    fill: var(--color-coal);
+}
+
+.button-link-block__button:hover .button-link-block__arrow {
+    fill: var(--color-snow-white);
+    transition: fill .7s;
+}
+.button-link-block__button:before .button-link-block__arrow {
+    fill: var(--color-snow-white);
+
+}

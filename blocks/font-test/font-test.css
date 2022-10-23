@@ -1,0 +1,83 @@
+.font-test {
+  margin: 0 auto;
+  max-width: 400px;
+  background: var(--color-accent);
+}
+
+.test-h1 {
+  font-family: 'Neue Machina';
+  font-size: 72px;
+  line-height: 70px;
+  letter-spacing: -0.01em;
+}
+
+.test-h2 {
+  font-family: 'Neue Machina';
+  font-size: 64px;
+  line-height: 60px;
+  letter-spacing: -0.01em;
+}
+
+.test-h3 {
+  font-family: 'Neue Machina';
+  font-size: 56px;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+}
+
+.test-h4 {
+  font-family: 'Neue Machina';
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+.test-h5 {
+  font-family: 'Neue Machina';
+  font-size: 36px;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+}
+
+.test-h6 {
+  font-family: 'Neue Machina';
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: -0.01em;
+}
+
+.test-h7 {
+  font-family: 'Neue Machina';
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+.test-text {
+  font-family: 'Formular';
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-weight: light;
+}
+
+.test-text-medium {
+  font-family: 'Formular';
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: light;
+}
+
+.test-text-small {
+  font-family: 'Formular';
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: light;
+}
+
+.test-caption-text {
+  font-family: 'Formular';
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: light;
+}

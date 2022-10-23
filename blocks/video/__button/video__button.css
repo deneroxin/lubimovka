@@ -1,0 +1,17 @@
+.video__button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    display: none;
+    z-index: 1;
+    padding: 0;
+}
+
+.video__button:focus {
+    outline: none;
+    
+}
+
