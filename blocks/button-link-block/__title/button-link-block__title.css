@@ -1,6 +1,9 @@
+.button-link-block__title {
+  margin-left: 0;
+}
+
 @media screen and (max-width:768px) {
     .button-link-block__title {
         margin-bottom: 0;
     }
-    
 }

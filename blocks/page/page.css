@@ -6,8 +6,5 @@
   width: 100%;
   touch-action: pan-y;
   margin: 0 auto;
-  font-family: 'Formular', 'Arial', sans-serif;
-  font-style: light;
-  color: var(--color-coal);
   position: relative;
 }

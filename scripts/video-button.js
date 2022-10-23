@@ -1,4 +1,4 @@
-function findVideos() {
+export function findVideos() {
     let videos = document.querySelectorAll('.video');
 
     for (let i = 0; i < videos.length; i++) {
@@ -23,7 +23,7 @@ function setupVideo(video) {
 
     link.removeAttribute('href');
     video.classList.add('video_enabled');
-   
+
 }
 
 function parseMediaURL(media) {
@@ -50,5 +50,3 @@ function generateURL(id) {
 
     return 'https://www.youtube.com/embed/' + id + query;
 }
-
-findVideos();

@@ -2,7 +2,7 @@
   background-color: var(--color-accent);
   height: fit-content;
   min-height: 398px;
-  padding-left: calc(0.25 * 100vw);
+  padding-left: var(--title-offset);
 }
 
 @media screen and (max-width: 870px) {

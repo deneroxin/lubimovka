@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     max-width: 716px;
-    padding: 98px 25% 98px 25%;
-    
+    padding: 98px var(--title-offset) 98px var(--title-offset);
+
 }
 
 @media screen and (max-width:768px) {

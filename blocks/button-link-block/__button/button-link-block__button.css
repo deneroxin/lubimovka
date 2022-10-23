@@ -15,19 +15,25 @@
     color: var(--color-coal);
     font-size: 16px;
     z-index: 1;
+    font-family: 'Formular';
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    font-weight: light;
+    color: var(--color-coal);
 }
 
 .button-link-block__button:hover {
     color: var(--color-snow-white) !important;
     background-color: transparent;
-   
+
 }
 
 .button-link-block__button:hover:before {
     left: 0%;
     right: auto;
     width: 100%;
-    
+
 }
 
 

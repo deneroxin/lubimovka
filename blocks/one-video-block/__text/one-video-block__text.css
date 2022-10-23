@@ -1,8 +1,9 @@
 .one-video-block__text {
-    font-family: 'Formular';
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: -0.01em;
-    font-weight: light;
-    margin: 0 0  98px 0;
+  margin-top: 55px;
+}
+
+@media screen and (max-width: 768px) {
+  .one-video-block__text {
+    margin-top: 32px;
+  }
 }

@@ -1,12 +1,14 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/fonts.css);
 @import url(../root/root.css);  /* Глобальные кастомные свойства (цвета) */
+@import url(../blocks/background/background.css);
+@import url(../blocks/page/page.css);
 
-<<<<<<< HEAD
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_type/button_type_left.css);
 @import url(../blocks/button/_type/button_type_right.css);
 @import url(../blocks/section-title/section-title.css);
+@import url(../blocks/section-text/section-text.css);
 @import url(../blocks/nav-link/nav-link.css);
 
 @import url(../blocks/header/header.css);
@@ -39,11 +41,9 @@
 @import url(../blocks/about/__title/about__title.css);
 @import url(../blocks/about/__subtitle/about__subtitle.css);
 
-@import url(../blocks/background/background.css);
 @import url(../blocks/button-link-block/button-link-block.css);
 @import url(../blocks/button-link-block/__arrow/button-link-block__arrow.css);
 @import url(../blocks/button-link-block/__button/button-link-block__button.css);
-@import url(../blocks/font-test/font-test.css);
 @import url(../blocks/one-video-block/one-video-block.css);
 @import url(../blocks/one-video-block/__text/one-video-block__text.css);
 @import url(../blocks/one-video-block/__title/one-video-block__title.css);
@@ -53,9 +53,6 @@
 @import url(../blocks/open-to-block/__star/open-to-block__star.css);
 @import url(../blocks/open-to-block/__text/open-to-block__text.css);
 @import url(../blocks/open-to-block/__title/open-to-block__title.css);
-@import url(../blocks/page/page.css);
-@import url(../blocks/section-text/section-text.css);
-@import url(../blocks/section-title/section-title.css);
 @import url(../blocks/video/video.css);
 @import url(../blocks/video/_enabled/video_enabled.css);
 @import url(../blocks/video/__button/video__button.css);
