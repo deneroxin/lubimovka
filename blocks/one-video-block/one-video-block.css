@@ -4,12 +4,13 @@
     display: flex;
     flex-direction: column;
     max-width: 716px;
-    padding: 98px var(--title-offset) 98px var(--title-offset);
+    padding: 98px var(--title-offset);
 
 }
 
 @media screen and (max-width:768px) {
-    .one-video-block {
-        padding: 57px 24px 100px 24px;
-    }
+  .one-video-block {
+      padding-top: 57px;
+      padding-bottom: 100px;
+  }
 }

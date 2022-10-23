@@ -1,14 +1,12 @@
 .about__title {
   margin: 0;
   width: 100%;
-  padding-top: 79px;
   padding-bottom: 17px;
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 576px) {
   .about__title {
-    padding-top: 56px;
-    max-width: 366px;
-    margin: 0 auto;
+    font-size: 40px;
+    line-height: 40px;
   }
 }

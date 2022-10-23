@@ -9,9 +9,6 @@
 
 @media screen and (max-width:768px) {
     .open-to-block__title {
-        font-size: 28px;
-        line-height: 32px;
         margin-bottom: 18px;
-        
     }
 }
