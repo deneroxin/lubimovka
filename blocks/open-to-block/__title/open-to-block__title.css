@@ -10,5 +10,7 @@
 @media screen and (max-width:768px) {
     .open-to-block__title {
         margin-bottom: 18px;
+        font-size: 28px;
+        line-height: 32px;
     }
 }

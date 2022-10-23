@@ -6,12 +6,12 @@
 
 @media screen and (max-width:1200px) {
     .open-to-block {
-        margin: 76px 24px 100px 35%;
+        margin: 76px 13.7% 100px 35%;
     }
 }
 
 @media screen and (max-width:768px) {
     .open-to-block {
-        margin: 76px 24px 100px 57px;
+        margin: 76px 13.7% 100px 13.7%;
     }
 }
