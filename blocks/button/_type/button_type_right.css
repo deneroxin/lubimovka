@@ -1,0 +1,20 @@
+.button_type_right {
+  text-align: right;
+  border-right: 1px solid var(--color-coal);
+  border-left: none;
+  background-image: url('./arrow-left-coal.svg');
+}
+
+.button_type_right:focus-visible {
+  outline: 2px dashed var(--color-accent);
+}
+
+.button_type_right, .button_type_right::before {
+  padding-right: 25px;
+  background-position: right center;
+}
+
+.button_type_right::before {
+  background-image: url('./arrow-left-white.svg');
+  clip-path: inset(0 0 0 100%);
+}

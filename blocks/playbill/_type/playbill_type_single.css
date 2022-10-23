@@ -1,0 +1,5 @@
+.playbill_type_single {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

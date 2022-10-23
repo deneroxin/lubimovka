@@ -1,4 +1,4 @@
-class CustomSlider {
+export class CustomSlider {
 
   getOffset(el, parent) {
     let offset = 0;
@@ -28,7 +28,7 @@ class CustomSlider {
     this.hasButtons = hasButtons;
     this.isButtonVisible = [false, null, false];
     const child = this.tape.children[0];
-    const gap = Number(window.getComputedStyle(this.tape).getPropertyValue('gap').replace('px',''));
+    const gap = Number(window.getComputedStyle(this.tape).getPropertyValue('column-gap').replace('px',''));
     const childWidth = Number(window.getComputedStyle(child).getPropertyValue('width').replace('px',''));
     this.step = gap + childWidth;
     this.tapeWidth = (gap + childWidth) * this.tape.children.length - gap;
