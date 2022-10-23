@@ -1,5 +1,6 @@
 .section-title {
-  margin: 0 0 0 25.1%;
+  /* margin: 0 0 0 25.1%; */
+  margin: 0;
 
   /* margin: 0 auto;
   padding-left: 20px;
@@ -11,6 +12,13 @@
   line-height: 40px;
   font-weight: normal;
   letter-spacing: -0.01em;
+}
+
+@media screen and (max-width: 576px) {
+  .section-title {
+      font-size: 28px;
+      line-height: 32px;
+  }
 }
 
 @media (max-width: 480px) {

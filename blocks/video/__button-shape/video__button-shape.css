@@ -1,0 +1,9 @@
+.video__button-shape {
+    fill-opacity: 0.8;
+}
+
+.video:hover .video__button-shape,
+.video__button:focus .video__button-shape {
+    fill-opacity: 1;
+    fill: #242424;
+}
