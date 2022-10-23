@@ -15,18 +15,19 @@
 @media screen and (max-width:1280px) {
     .button-link-block {
 
-        grid-template-columns: 1fr ;
-        grid-template-rows: 64px auto 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr 1fr;
         gap: 8px;
-    grid-template-areas:
-        "title"
-        "text"
-        "button";
+        grid-template-areas:
+            "title"
+            "text"
+            "button";
     }
 }
+
 @media screen and (max-width:768px) {
     .button-link-block {
-        padding: 57px 24px 30px 24px;
+        padding: 57px 5.8% 30px 5.8%;
         margin: 0;
     }
 }

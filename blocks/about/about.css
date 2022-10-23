@@ -2,12 +2,13 @@
   background-color: var(--color-accent);
   height: fit-content;
   min-height: 398px;
-  padding-left: calc(0.25 * 100vw);
+  /* padding-left: calc(0.25 * 100vw);*/
+  padding-left: 25%;
 }
 
 @media screen and (max-width: 870px) {
   .about {
-    padding: 0 24px;
+    padding: 0 5.8%;
     min-height: 437px;
   }
 }
