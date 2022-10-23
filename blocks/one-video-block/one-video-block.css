@@ -1,0 +1,15 @@
+.one-video-block {
+    background-color: var(--color-main-background);
+    color: var(--color-coal);
+    display: flex;
+    flex-direction: column;
+    max-width: 716px;
+    padding: 98px 25% 98px 25%;
+    
+}
+
+@media screen and (max-width:768px) {
+    .one-video-block {
+        padding: 57px 24px 100px 24px;
+    }
+}
