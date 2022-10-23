@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 32px;
   padding-left: 30px;
-  min-height: 708px;
+
   display: grid;
   grid-template-rows: minmax(min-content, max-content) 445px;
   grid-template-columns: 1fr 720px;

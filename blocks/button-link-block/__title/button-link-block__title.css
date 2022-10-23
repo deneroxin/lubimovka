@@ -5,5 +5,7 @@
 @media screen and (max-width:768px) {
     .button-link-block__title {
         margin-bottom: 0;
+        font-size: 28px;
+        line-height: 32px;
     }
 }
