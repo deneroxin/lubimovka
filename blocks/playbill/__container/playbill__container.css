@@ -1,0 +1,26 @@
+.playbill__container {
+  --column-gap: 61px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: var(--column-gap);
+}
+
+.playbill_type_double .playbill__container {
+  --column-gap: 119px;
+}
+
+@media (max-width: 480px) {
+  .playbill__container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 65px;
+    transform: none;
+    transition: none;
+  }
+}
+

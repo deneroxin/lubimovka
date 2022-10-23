@@ -1,0 +1,13 @@
+.front-page__image {
+  max-width: 720px;
+  width: 100%;
+  object-fit: cover;
+  grid-area: image;
+}
+
+@media screen and (max-width: 870px) {
+  .front-page__image {
+    max-width: none;
+    height: calc(1.087 * 100vw);
+  }
+}

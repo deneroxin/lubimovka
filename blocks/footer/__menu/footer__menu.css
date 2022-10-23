@@ -1,0 +1,24 @@
+.footer__menu {
+  margin: 0;
+  padding: 0;
+  grid-area: menu-start;
+}
+
+.footer__menu:nth-of-type(2) {
+  grid-area: menu-center;
+}
+
+.footer__menu:last-of-type {
+  grid-area: menu-end;
+  max-height: none;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__menu {
+    padding-bottom: 52px;
+    padding-left: 24px;
+  }
+  .footer__menu:nth-of-type(2) {
+    padding-left: 0;
+  }
+}

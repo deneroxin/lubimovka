@@ -1,0 +1,21 @@
+.button_type_left {
+  text-align: left;
+  border-left: 1px solid var(--color-coal);
+  border-right: none;
+  background-image: url('./arrow-right-coal.svg');
+}
+
+.button_type_left:focus-visible {
+  outline: 2px dashed var(--color-accent);
+}
+
+.button_type_left, .button_type_left::before {
+  box-sizing: border-box;
+  padding-left: 25px;
+  background-position: left center;
+}
+
+.button_type_left::before {
+  background-image: url('./arrow-right-white.svg');
+  clip-path: inset(0 100% 0 0);
+}

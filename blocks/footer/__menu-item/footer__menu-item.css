@@ -1,0 +1,31 @@
+.footer__menu-item {
+  display: block;
+  font-family: 'Formular';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  list-style-type: none;
+  padding-bottom: 15px;
+  padding-right: 50px;
+  min-width: 122px;
+}
+
+.footer__menu-item:last-of-type {
+  padding-bottom: 0;
+}
+
+.footer__menu:last-of-type > .footer__menu-item {
+  min-width: 210px;
+  padding-right: 0;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__menu-item {
+    width: 100%;
+    min-width: 190px;
+    font-size: 18px;
+    line-height: 23px;
+    padding-right: 0;
+  }
+}

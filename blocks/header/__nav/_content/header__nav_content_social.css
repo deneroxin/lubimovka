@@ -1,0 +1,10 @@
+.header__nav_content_social {
+  border-left: 1px solid #242424;
+  border-right: 1px solid #242424;
+}
+
+@media screen and (max-width: 1420px) {
+  .header__nav_content_social {
+    border: none;
+  }
+}

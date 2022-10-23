@@ -1,0 +1,8 @@
+.announcement__info {
+  margin: 0 0 16px;
+  grid-area: info;
+  font-family: 'Formular';
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: light;
+}

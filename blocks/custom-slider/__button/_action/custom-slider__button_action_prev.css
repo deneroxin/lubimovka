@@ -1,0 +1,24 @@
+.custom-slider__button_action_prev {
+  background-image: url(../../../button/_type/arrow-left-coal.svg);
+  left: 4px;
+}
+
+.custom-slider__button_action_prev, .custom-slider__button_action_prev::before {
+  border-left: 2px solid var(--color-coal);
+}
+
+.custom-slider__button_action_prev::before {
+  left: -2px;
+}
+
+.custom-slider__button_action_prev:hover::before, .custom-slider__button_action_prev:focus::before {
+  transform: rotate(-180deg);
+}
+
+.custom-slider__button_action_prev::after {
+  left: -2px;
+}
+
+.custom-slider__button_action_prev:hover::after, .custom-slider__button_action_prev:focus::after {
+  background-image: url(../../../button/_type/arrow-left-white.svg);
+}

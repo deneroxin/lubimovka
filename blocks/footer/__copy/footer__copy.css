@@ -1,0 +1,10 @@
+.footer__copy {
+  padding-right: 25px;
+  margin: 0;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__copy {
+    padding-left: 24px;
+  }
+}

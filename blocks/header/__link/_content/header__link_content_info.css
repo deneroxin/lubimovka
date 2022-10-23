@@ -1,0 +1,9 @@
+.header__link_content_info {
+  margin-right: 44px;
+}
+
+@media screen and (min-width: 1420px) {
+  .header__link_content_info:last-child {
+    margin: 0;
+  }
+}

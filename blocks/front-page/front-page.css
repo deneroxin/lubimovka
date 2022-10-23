@@ -1,0 +1,32 @@
+.front-page {
+  position: relative;
+  padding-top: 32px;
+  padding-left: 30px;
+  min-height: 708px;
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content) 445px;
+  grid-template-columns: 1fr 720px;
+  grid-template-areas:
+    "button title"
+    "subtitle image";
+  column-gap: calc(.08334 * 100vw);
+  row-gap: calc(.04514 * 100vw);
+  background-color: var(--color-main-background);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 870px) {
+  .front-page {
+    padding-top: 30px;
+    padding-left: 0;
+    min-height: 362px;
+    grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+    grid-template-areas:
+      "button"
+      "title"
+      "subtitle"
+      "image";
+  }
+}

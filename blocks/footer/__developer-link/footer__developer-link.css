@@ -1,0 +1,10 @@
+.footer__developer-link {
+  color: var(--color-coal);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__developer-link {
+    text-decoration: underline;
+  }
+}

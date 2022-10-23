@@ -1,0 +1,23 @@
+.footer__partners {
+  grid-area: partners;
+  padding-top: 6px;
+  display: flex;
+  max-width: 579px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1030px) {
+  .footer__partners {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .footer__partners {
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 366px;
+    width: (.8841 * 100vw);
+  }
+}

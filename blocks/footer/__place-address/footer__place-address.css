@@ -1,0 +1,20 @@
+.footer__place-address {
+  margin: 0;
+  max-width: 140px;
+  font-family: 'Formular';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--color-coal);
+}
+
+@media screen  and (max-width: 1030px) {
+  .footer__place-address {
+    opacity: .6;
+    max-width: 250px;
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 23px;
+  }
+}

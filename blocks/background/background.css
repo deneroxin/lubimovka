@@ -6,7 +6,7 @@
 у элементов, поддерживающих наследование шрифта;
 */
 .background {
-  background: var(--color-main-background);
   overflow-x: hidden;
   font-family: 'Formular', 'Arial', sans-serif;
+  background-color: var(--color-main-background);
 }
