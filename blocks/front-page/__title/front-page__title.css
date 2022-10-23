@@ -11,7 +11,7 @@
   font-size: 72px;
   line-height: 70px;
   letter-spacing: -0.01em;
-  color: (--color-coal);
+  color: var(--color-coal);
 }
 
 @media screen and (max-width: 870px) {

@@ -1,25 +1,17 @@
 .section-title {
-  margin: 0 0 0 25.1%;
+  margin: 0 0 0 var(--title-offset);
   max-width: 568px;
   font-family: 'Neue Machina';
   font-size: 40px;
   line-height: 40px;
+  font-weight: normal;
   letter-spacing: -0.01em;
+  color: var(--color-coal);
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 576px) {
   .section-title {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding: 0 calc((100vw - 364px) / 2);
     font-size: 28px;
     line-height: 32px;
-  }
-}
-
-@media (max-width: 364px) {
-  .section-title {
-    padding: 0;
   }
 }

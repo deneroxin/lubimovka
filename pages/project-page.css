@@ -8,6 +8,7 @@
 @import url(../blocks/button/_type/button_type_left.css);
 @import url(../blocks/button/_type/button_type_right.css);
 @import url(../blocks/section-title/section-title.css);
+@import url(../blocks/section-text/section-text.css);
 @import url(../blocks/nav-link/nav-link.css);
 
 @import url(../blocks/header/header.css);
@@ -39,6 +40,29 @@
 @import url(../blocks/about/about.css);
 @import url(../blocks/about/__title/about__title.css);
 @import url(../blocks/about/__subtitle/about__subtitle.css);
+
+@import url(../blocks/button-link-block/button-link-block.css);
+@import url(../blocks/button-link-block/__arrow/button-link-block__arrow.css);
+@import url(../blocks/button-link-block/__button/button-link-block__button.css);
+@import url(../blocks/one-video-block/one-video-block.css);
+@import url(../blocks/one-video-block/__text/one-video-block__text.css);
+@import url(../blocks/one-video-block/__title/one-video-block__title.css);
+@import url(../blocks/one-video-block/__video/one-video-block__video.css);
+@import url(../blocks/open-to-block/open-to-block.css);
+@import url(../blocks/open-to-block/__link/open-to-block__link.css);
+@import url(../blocks/open-to-block/__star/open-to-block__star.css);
+@import url(../blocks/open-to-block/__text/open-to-block__text.css);
+@import url(../blocks/open-to-block/__title/open-to-block__title.css);
+@import url(../blocks/video/video.css);
+@import url(../blocks/video/_enabled/video_enabled.css);
+@import url(../blocks/video/__button/video__button.css);
+@import url(../blocks/video/__button-icon/video__button-icon.css);
+@import url(../blocks/video/__button-shape/video__button-shape.css);
+@import url(../blocks/video/__link/video__link.css);
+@import url(../blocks/video/__media/video__media.css);
+@import url(../blocks/video/__media/video__media.css);
+@import url(../blocks/button-link-block/__text/button-link-block__text.css);
+@import url(../blocks/button-link-block/__title/button-link-block__title.css);
 
 @import url(../blocks/announcement/announcement.css);
 @import url(../blocks/announcement/__image/announcement__image.css);

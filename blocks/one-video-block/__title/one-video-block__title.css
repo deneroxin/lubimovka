@@ -1,0 +1,10 @@
+.one-video-block__title {
+    margin: 0 0 37px 0;
+}
+
+@media screen and (max-width: 576px) {
+    .one-video-block__title {
+        margin: 57px 0 32px 0;
+    }
+
+}

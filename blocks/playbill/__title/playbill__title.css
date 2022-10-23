@@ -8,7 +8,7 @@
   max-width: 450px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .playbill__title {
     margin-bottom: 34px;
   }

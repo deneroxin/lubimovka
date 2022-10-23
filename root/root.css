@@ -3,4 +3,12 @@
   --color-snow-white: #fff;
   --color-main-background: #ecebe8;
   --color-accent: #b7c09d;
+  --scale-k: ((100vw - 414px) / (1440 - 414));
+  --title-offset: calc(24px + (362 - 24) * var(--scale-k));
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --title-offset: 362px;
+  }
 }

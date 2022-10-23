@@ -1,22 +1,12 @@
 .about__title {
   margin: 0;
-  max-width: 569px;
   width: 100%;
-  padding-top: 79px;
   padding-bottom: 17px;
-  font-family: 'Neue Machina';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: -0.01em;
-  color: var(--color-coal);
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 576px) {
   .about__title {
-    padding-top: 56px;
-    max-width: 366px;
-    margin: 0 auto;
+    font-size: 40px;
+    line-height: 40px;
   }
 }

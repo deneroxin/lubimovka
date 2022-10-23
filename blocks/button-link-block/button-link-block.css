@@ -1,0 +1,35 @@
+.button-link-block {
+    margin-top: 112px;
+    color: var(--color-coal);
+    background-color: var(--color-accent);
+    padding: calc(56px + (71 - 56) * var(--scale-k))
+             var(--title-offset)
+             calc(72px + (141 - 72) * var(--scale-k));
+    display: grid;
+    grid-template-columns: 410px 300px;
+    grid-template-rows: 1fr auto;
+    gap: 20px 100px;
+    grid-template-areas:
+        "title title"
+        "text button";
+}
+
+
+@media screen and (max-width:1280px) {
+    .button-link-block {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 64px auto 1fr 1fr;
+        gap: 8px;
+    grid-template-areas:
+        "title"
+        "text"
+        "button";
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .button-link-block {
+        margin-top: 100px;
+    }
+}
