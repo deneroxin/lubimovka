@@ -1,7 +1,7 @@
 .page {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 320px;
+  min-width: 414px;
   max-width: 1440px;
   width: 100%;
   touch-action: pan-y;
