@@ -12,7 +12,7 @@
 @media screen and (max-width: 1420px) {
   .header__menu-container {
     display: none;
-    grid-template-columns: 200px;
+    grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
     grid-row-gap: 20px;
     align-items: flex-end;
