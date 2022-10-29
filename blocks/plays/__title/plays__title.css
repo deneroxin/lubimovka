@@ -1,0 +1,11 @@
+.plays__title {
+  margin-top: 93px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .plays__title {
+    margin-top: 100px;
+    margin-bottom: 32px;
+  }
+}

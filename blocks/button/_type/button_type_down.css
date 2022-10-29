@@ -1,0 +1,19 @@
+.button_type_down {
+  text-align: left;
+  border-top: 1px solid var(--color-coal);
+  background-image: url('./arrow-down.svg');
+}
+
+.button_type_down:focus-visible {
+  outline: 2px dashed var(--color-accent);
+}
+
+.button_type_down, .button_type_down::before {
+  padding: 19px calc(2 * 16px + 25px) 20px 16px;
+  background-position: right 16px bottom 50%;
+}
+
+.button_type_down::before {
+  background-image: url('./arrow-down-white.svg');
+  clip-path: inset(0 100% 0 0);
+}

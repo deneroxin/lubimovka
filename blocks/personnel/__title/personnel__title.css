@@ -1,0 +1,11 @@
+.personnel__title {
+  margin-top: 123px;
+  margin-bottom: 58px;
+}
+
+@media (max-width: 768px) {
+  .personnel__title {
+    margin-top: 100px;
+    margin-bottom: 24px;
+  }
+}

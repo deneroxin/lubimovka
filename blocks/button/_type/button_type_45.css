@@ -1,0 +1,7 @@
+.button_type_45 {
+  background-image: url('./arrow-45.svg');
+}
+
+.button_type_45::before {
+  background-image: url('./arrow-45-white.svg');
+}

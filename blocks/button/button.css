@@ -4,12 +4,13 @@
   line-height: 16px;
   font-weight: light;
   text-transform: uppercase;
+  text-decoration: none;
+  border: none;
   color: var(--color-coal);
-  border-bottom: 1px solid var(--color-coal);
-  border-top: none;
   border-radius: 0;
   background-color: transparent;
   transition: box-shadow .1s linear;
+  cursor: pointer;
 }
 
 .button:focus-visible {

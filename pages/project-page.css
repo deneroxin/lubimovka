@@ -7,9 +7,20 @@
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_type/button_type_left.css);
 @import url(../blocks/button/_type/button_type_right.css);
+@import url(../blocks/button/_type/button_type_down.css);
+@import url(../blocks/button/_type/button_type_45.css);
 @import url(../blocks/section-title/section-title.css);
 @import url(../blocks/section-text/section-text.css);
 @import url(../blocks/nav-link/nav-link.css);
+
+@import url(../blocks/play/play.css);
+@import url(../blocks/play/__box/play__box.css);
+@import url(../blocks/play/__title/play__title.css);
+@import url(../blocks/play/__buttons/play__buttons.css);
+@import url(../blocks/play/__link/play__link.css);
+@import url(../blocks/play/__author/play__author.css);
+@import url(../blocks/play/__name/play__name.css);
+@import url(../blocks/play/__city-year/play__city-year.css);
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -74,6 +85,13 @@
 @import url(../blocks/announcement/__director/announcement__director.css);
 @import url(../blocks/announcement/__info/announcement__info.css);
 @import url(../blocks/announcement/__buttons/announcement__buttons.css);
+@import url(../blocks/announcement/__button/announcement__button.css);
+
+@import url(../blocks/person/person.css);
+@import url(../blocks/person/__photo/person__photo.css);
+@import url(../blocks/person/__name/person__name.css);
+@import url(../blocks/person/__name-word/person__name-word.css);
+@import url(../blocks/person/__position/person__position.css);
 
 @import url(../blocks/custom-slider/custom-slider.css);
 @import url(../blocks/custom-slider/__tape/custom-slider__tape.css);
@@ -89,6 +107,16 @@
 @import url(../blocks/playbill/__slider/playbill__slider.css);
 @import url(../blocks/playbill/__container/playbill__container.css);
 @import url(../blocks/playbill/__button/playbill__button.css);
+
+@import url(../blocks/plays/plays.css);
+@import url(../blocks/plays/__title/plays__title.css);
+@import url(../blocks/plays/__slider/plays__slider.css);
+@import url(../blocks/plays/__container/plays__container.css);
+
+@import url(../blocks/personnel/personnel.css);
+@import url(../blocks/personnel/__title/personnel__title.css);
+@import url(../blocks/personnel/__slider/personnel__slider.css);
+@import url(../blocks/personnel/__container/personnel__container.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__logo/footer__logo.css);

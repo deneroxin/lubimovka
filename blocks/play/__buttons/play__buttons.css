@@ -1,0 +1,14 @@
+.play__buttons {
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.play__box:hover .play__buttons, .play__buttons:focus-within {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .play__buttons {
+    opacity: 1;
+  }
+}
