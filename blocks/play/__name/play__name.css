@@ -1,0 +1,12 @@
+.play__name {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 768px) {
+  .play__name {
+    display: inline;
+  }
+}

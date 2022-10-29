@@ -1,0 +1,10 @@
+.personnel__container {
+  --column-gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: var(--column-gap);
+}

@@ -1,0 +1,14 @@
+.person__photo {
+  display: block;
+  width: 100%;
+  height: 265px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .person__photo {
+    filter: grayscale(100%);
+  }
+}
+

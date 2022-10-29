@@ -1,7 +1,7 @@
 .button_type_left {
   text-align: left;
   border-left: 1px solid var(--color-coal);
-  border-right: none;
+  border-bottom: 1px solid var(--color-coal);
   background-image: url('./arrow-right-coal.svg');
 }
 

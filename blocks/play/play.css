@@ -1,0 +1,11 @@
+.play {
+  width: 240px;
+  --button-height: 56px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .play {
+    width: 244px;
+  }
+}

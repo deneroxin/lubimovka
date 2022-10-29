@@ -1,0 +1,10 @@
+.personnel__slider {
+  position: relative;
+  --padding: min(calc(0px + (60 - 0) * var(--scale-k)), 60px);
+  max-width: calc(100% - 2 * var(--padding));
+  align-self: center;
+  --custom-slider__active: 1;
+  --custom-slider__vertical-position: 75%;
+  --custom-slider__button-size: 50px;
+  --custom-slider__arrow-size: 20px;
+}

@@ -1,0 +1,10 @@
+.person {
+  width: 210px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .person {
+    width: 213px;
+  }
+}
