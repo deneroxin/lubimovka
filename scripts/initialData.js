@@ -1,8 +1,42 @@
 export const initialData = {
+  gallery: [
+    {
+      image: 'Rectangle 158',
+      alt: 'Александр Хмельницкий зачитывает сценарий'
+    },
+    {
+      image: 'Rectangle 160',
+      alt: 'Певцы театра поют патриотическую песню'
+    },
+    {
+      image: 'Rectangle 193',
+      alt: 'Афиша спектакля "Про линя"'
+    },
+    {
+      image: 'Rectangle 194',
+      alt: 'Галина Вертинская показывает, как надо играть'
+    },
+    {
+      image: 'Rectangle 195',
+      alt: 'Сергей Чичваркин пел и забыл слова'
+    },
+    {
+      image: 'Rectangle 196',
+      alt: 'Зал тетра со зрителями'
+    },
+    {
+      image: 'Rectangle 197',
+      alt: 'Антонина Захарова'
+    },
+    {
+      image: 'Rectangle 198',
+      alt: 'Тереза Шимчак'
+    }
+  ],
   threeAndMorePlays:
   [
     {
-      image: 'Rectangle-135',
+      image: 'Mama',
       date: '15 aвгуста',
       time: '11:00',
       title: 'Мама',
@@ -11,7 +45,7 @@ export const initialData = {
       info: 'читка проекта Любимовка.Ещё'
     },
     {
-      image: 'Rectangle-193',
+      image: 'ProLinya',
       date: '16 aвгуста',
       time: '12:00',
       title: 'Про линя',
@@ -178,34 +212,44 @@ export const initialData = {
   ],
   personnel: [
     {
-      photo: 'Rectangle 158',
+      photo: 'Shimchak',
       name: 'Тереза Шимчак',
       position: 'Драматург, сценарист, преподаватель',
     },
     {
-      photo: 'Rectangle 159',
+      photo: 'Hmelnitskiy',
       name: 'Александр Хмельницкий',
       position: 'Актёр, режиссёр, слесарь',
     },
     {
-      photo: 'Rectangle 160',
+      photo: 'Zaharova',
       name: 'Антонина Захарова',
       position: 'Режиссёр, поэт, зав. кафедры',
     },
     {
-      photo: 'Rectangle 158',
+      photo: 'Breshnikova',
       name: 'Александра Брешникова',
       position: 'Драматург, лауреат нобелевской премии',
     },
     {
-      photo: 'Rectangle 159',
+      photo: 'Bezenchuk',
       name: 'Сергей Безенчук',
-      position: 'Экономист, оператор, писатель',
+      position: 'Режиссёр, сценарист, водитель',
     },
     {
-      photo: 'Rectangle 160',
+      photo: 'Neonova',
       name: 'Василиса Неонова',
       position: 'Певица, маркетолог, завуч',
+    },
+    {
+      photo: 'Richt',
+      name: 'Илона Рихт',
+      position: 'Зав. кафедры, бухгалтер, актёр',
+    },
+    {
+      photo: 'Pereyaslavtsev',
+      name: 'Родион Переяславцев',
+      position: 'Экономист, оператор, писатель',
     },
   ]
 };

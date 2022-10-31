@@ -2,15 +2,28 @@
   text-align: left;
   border-top: 1px solid var(--color-coal);
   background-image: url('./arrow-down.svg');
+  --arrow-y: 50%;
+  --bt: 1px;
+  --bh: 0px;
+  --bb: 0px;
+  --pt: calc(20px - var(--bt));
+  --ph: calc(16px - var(--bh));
+  --pb: calc(20px - var(--bb));
 }
 
 .button_type_down:focus-visible {
-  outline: 2px dashed var(--color-accent);
+  outline: none;
+  --arrow-y: calc(50% + .5px);
+  --bw: 2px;
+  --bt: var(--bw);
+  --bh: var(--bw);
+  --bb: var(--bw);
+  border: var(--bw) dashed var(--color-coal);
 }
 
 .button_type_down, .button_type_down::before {
-  padding: 19px calc(2 * 16px + 25px) 20px 16px;
-  background-position: right 16px bottom 50%;
+  padding: var(--pt) calc(2 * (16px - var(--bh)) + 25px) var(--pb) var(--ph);
+  background-position: right var(--ph) top var(--arrow-y);
 }
 
 .button_type_down::before {

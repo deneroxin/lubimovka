@@ -1,0 +1,11 @@
+.gallery__title {
+  margin-top: 145px;
+  margin-bottom: 42px;
+}
+
+@media (max-width: 768px) {
+  .gallery__title {
+    margin-top: 100px;
+    margin-bottom: 22px;
+  }
+}

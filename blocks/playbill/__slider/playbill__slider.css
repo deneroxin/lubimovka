@@ -6,7 +6,7 @@
   --custom-slider__active: 1;
   --custom-slider__vertical-position: 220px;
   --custom-slider__button-size: 50px;
-  --custom-slider__arrow-size: 30px;
+  --custom-slider__arrow-size: 25px;
 }
 
 @media (max-width: 480px) {

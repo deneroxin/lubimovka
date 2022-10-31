@@ -75,6 +75,10 @@
 @import url(../blocks/button-link-block/__text/button-link-block__text.css);
 @import url(../blocks/button-link-block/__title/button-link-block__title.css);
 
+@import url(../blocks/gallery/__title/gallery__title.css);
+@import url(../blocks/gallery/__container/gallery__container.css);
+@import url(../blocks/gallery/__image/gallery__image.css);
+
 @import url(../blocks/announcement/announcement.css);
 @import url(../blocks/announcement/__image/announcement__image.css);
 @import url(../blocks/announcement/__date/announcement__date.css);
