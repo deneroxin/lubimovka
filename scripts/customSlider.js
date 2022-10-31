@@ -1,29 +1,4 @@
 export class CustomSlider {
-
-  getOffset(el, parent) {
-    let offset = 0;
-    while (el !== parent) {
-      offset += el.offsetLeft;
-      el = el.offsetParent;
-    }
-    return offset;
-  }
-
-  handleFocusIn(evt) {
-    if (this.mouseFocus) {
-      this.mouseFocus = false;
-    } else {
-      const offset = this.getOffset(evt.target, this.tape) + this.interactiveWidth / 2;
-      this.jump(this.boxWidth / 2 - offset);
-    }
-  }
-
-  jump(position) {
-    this.bigStep = true;
-    this.x1 = position;
-    this.processMoving();
-  }
-
   // options:
   //   dataSource
   //   createChild
@@ -31,23 +6,26 @@ export class CustomSlider {
   //   interactiveClass
   //   cyclic
   //   numChildrenPresent
-
   constructor(box, options, hasButtons = true) {
-    box.dat = this;
-    box.addEventListener('scroll', evt => evt.currentTarget.scrollLeft = 0);
+    this.matching = !options.numChildrenPresent;
+    if (this.matching) options.numChildrenPresent = options.dataSource.length;
     this.box = box;
     this.options = options;
-    this.scroll = (options.cyclic ? this.scrollCyclic : this.scrollFinite);
     this.tape = box.querySelector('.custom-slider__tape');
-    this.buttonsVisible = Number(hasButtons) << 1;
-    this.isButtonVisible = [false, null, false];
-    this.n = (options.cyclic ? options.numChildrenPresent
-      : Math.min(options.numChildrenPresent, options.dataSource.length));
-    for (let i = 0; i < this.n; i++)
-      this.tape.append(options.createChild(this.options.dataSource[(i % options.dataSource.length)]));
-    this.start = 0;
     this.prevButton = box.querySelector('.custom-slider__button_action_prev');
     this.nextButton = box.querySelector('.custom-slider__button_action_next');
+    this.buttonsVisible = Number(hasButtons) << 1;
+    this.isButtonVisible = [false, null, false];
+    this.scroll = (options.cyclic ? this.scrollCyclic : this.scrollFinite);
+    this.n = (options.cyclic
+      ? Math.floor(options.numChildrenPresent)
+      : Math.floor(Math.min(options.numChildrenPresent, options.dataSource.length)));
+    if (this.matching && options.cyclic && this.n < 16) this.n += this.n;
+    for (let i = 0; i < this.n; i++) {
+      const data = options.dataSource[(i % options.dataSource.length)];
+      this.tape.append(options.createChild(data));
+    }
+    this.start = 0;
     this.buttonTarget = false;
     this.f = null;
     this.fDecay = 0.6;
@@ -58,40 +36,69 @@ export class CustomSlider {
     this.pushX = null;
     this.x1 = this.x = this.v = 0;
     this.vClick = 0;
+    this.mouse = false;
+    this.bigStep = false;
+    this.defineEventListeners();
+    this.handleResize();
+    this.setupEventListeners();
+  }
+
+  defineEventListeners() {
     this.down = (evt => this.handlePointerDown(evt));
+    this.click = (evt => this.handleClick(evt));
+    this.focusin = (evt => this.handleFocusIn(evt));
     this.move = (evt => this.handlePointerMove(evt));
     this.up = (() => this.handlePointerUp());
     this.cancel = (() => this.handlePointerCancel());
-    this.click = (evt => this.handleClick(evt));
-    this.focusin = (evt => this.handleFocusIn(evt));
-    this.mouse = false;
-    this.bigStep = false;
+  }
+
+  setupEventListeners() {
     window.addEventListener('resize', () => this.handleResize());
-    this.handleResize();
+    this.box.addEventListener('scroll', evt => evt.currentTarget.scrollLeft = 0);
     this.prevButton.addEventListener('click', () => this.jump(this.x1 + this.step));
     this.nextButton.addEventListener('click', () => this.jump(this.x1 - this.step));
   }
 
+  addBasicEventListeners() {
+    this.box.addEventListener('pointerdown', this.down);
+    this.box.addEventListener('click', this.click, true);
+    this.tape.addEventListener('focusin', this.focusin);
+  }
+
+  removeBasicEventListeners() {
+    this.box.removeEventListener('pointerdown', this.down);
+    this.box.removeEventListener('click', this.click, true);
+    this.tape.removeEventListener('focusin', this.focusin);
+  }
+
+  addEventListeners() {
+    this.box.addEventListener('pointermove', this.move);
+    this.box.addEventListener('pointerup', this.up);
+    this.box.addEventListener('pointercancel', this.cancel);
+  }
+
+  removeEventListeners() {
+    this.box.removeEventListener('pointermove', this.move);
+    this.box.removeEventListener('pointerup', this.up);
+    this.box.removeEventListener('pointercancel', this.cancel);
+  }
+
   handleResize() {
     const child = this.tape.children[0];
-    const gap = Number(window.getComputedStyle(this.tape)
-      .getPropertyValue('column-gap').replace('px',''));
-    const childWidth = Number(window.getComputedStyle(child)
-      .getPropertyValue('width').replace('px',''));
+    const gap = this.getWidth(this.tape, 'column-gap');
+    const childWidth = this.getWidth(child);
+    this.interactiveWidth = 0;
     if (this.options.interactiveClass) {
-      this.interactiveWidth = Number(window.getComputedStyle(child.querySelector(`.${this.options.interactiveClass}`))
-        .getPropertyValue('width').replace('px',''));
-    } else this.interactiveWidth = 0;
+      const interactiveElement = child.querySelector(`.${this.options.interactiveClass}`);
+      this.interactiveWidth = this.getWidth(interactiveElement);
+    }
     this.step = gap + childWidth;
     this.tapeWidth = this.step * this.n - gap;
     this.tapeFullWidth = this.step * this.options.dataSource.length - gap;
     this.histeresis = 2 * this.step;
-    this.boxWidth = Number(window.getComputedStyle(this.box)
-      .getPropertyValue('width').replace('px',''));
-    const buttonWidth = Number(window.getComputedStyle(this.prevButton)
-      .getPropertyValue('width').replace('px',''));
-    this.active = Number(window.getComputedStyle(this.box)
-      .getPropertyValue('--custom-slider__active') == 1) << 1;
+    this.boxWidth = this.getWidth(this.box);
+    const buttonWidth = this.getWidth(this.prevButton);
+    this.active = Number(this.getWidth(this.box, '--custom-slider__active') == 1) << 1;
     this.active |= Number(this.tapeFullWidth > this.boxWidth);
     this.buttonsVisible &= 2;
     this.buttonsVisible |= Number(this.boxWidth > this.step + 2 * buttonWidth);
@@ -103,9 +110,7 @@ export class CustomSlider {
         this.hideButton(1);
       }
       this.pushed = false;
-      this.box.addEventListener('pointerdown', this.down);
-      this.box.addEventListener('click', this.click, true);
-      this.tape.addEventListener('focusin', this.focusin);
+      this.addBasicEventListeners();
       if (this.options.cyclic) {
         this.showButton(-1);
         this.showButton(1);
@@ -115,10 +120,28 @@ export class CustomSlider {
       this.box.style.width = `${this.tapeWidth}px`;
       this.hideButton(-1);
       this.hideButton(1);
-      this.box.removeEventListener('pointerdown', this.down);
-      this.box.removeEventListener('click', this.click, true);
-      this.tape.removeEventListener('focusin', this.focusin);
+      this.removeBasicEventListeners();
     }
+  }
+
+  getWidth(element, name = 'width') {
+    return Number(window.getComputedStyle(element)
+      .getPropertyValue(name).replace('px',''));
+  }
+
+  getOffset(el, parent) {
+    let offset = 0;
+    while (el !== parent) {
+      offset += el.offsetLeft;
+      el = el.offsetParent;
+    }
+    return offset;
+  }
+
+  jump(position) {
+    this.bigStep = true;
+    this.x1 = position;
+    this.processMoving();
   }
 
   moveTape(position) {
@@ -144,8 +167,10 @@ export class CustomSlider {
   }
 
   addRightElement() {
-    const end = (this.start + this.n) % this.options.dataSource.length;
-    this.options.fillChild(this.tape.children[0], this.options.dataSource[end]);
+    if (!this.matching) {
+      const end = ((this.start + this.n) % this.options.dataSource.length);
+      this.options.fillChild(this.tape.children[0], this.options.dataSource[end]);
+    }
     if (++this.start >= this.options.dataSource.length) this.start -= this.options.dataSource.length;
     this.tape.append(this.tape.children[0]);
     this.x += this.step;
@@ -158,27 +183,20 @@ export class CustomSlider {
     this.tape.prepend(this.tape.children[this.n-1]);
     this.x -= this.step;
     this.x1 -= this.step;
-    this.options.fillChild(this.tape.children[0], this.options.dataSource[this.start]);
+    if (!this.matching) {
+      this.options.fillChild(this.tape.children[0], this.options.dataSource[this.start]);
+    }
     // console.log('>--');
   }
 
-  shuffleElements() {
+  scrollFinite(step) {
+    this.x += step;
     while (this.x < this.leftEdge
       && this.start + this.n < this.options.dataSource.length)
         this.addRightElement();
     while (this.x > this.rightEdge
       && this.start > 0)
         this.addLeftElement();
-  }
-
-  shuffleElementsCyclic() {
-    while (this.x < this.leftEdge) this.addRightElement();
-    while (this.x > this.rightEdge) this.addLeftElement();
-  }
-
-  scrollFinite(step) {
-    this.x += step;
-    this.shuffleElements();
     if (this.x + this.tapeWidth <= this.boxWidth && this.start + this.n == this.options.dataSource.length) {
       this.x = this.boxWidth - this.tapeWidth;
       this.v = 0;
@@ -200,36 +218,9 @@ export class CustomSlider {
 
   scrollCyclic(step) {
     this.x += step;
-    this.shuffleElementsCyclic();
+    while (this.x < this.leftEdge) this.addRightElement();
+    while (this.x > this.rightEdge) this.addLeftElement();
     this.moveTape(this.x);
-  }
-
-  addEventListeners() {
-    this.box.addEventListener('pointermove', this.move);
-    this.box.addEventListener('pointerup', this.up);
-    this.box.addEventListener('pointercancel', this.cancel);
-  }
-
-  removeEventListeners() {
-    this.box.removeEventListener('pointermove', this.move);
-    this.box.removeEventListener('pointerup', this.up);
-    this.box.removeEventListener('pointercancel', this.cancel);
-  }
-
-  handlePointerDown(evt) {
-    if (evt.target.classList.contains(this.options.interactiveClass)) {
-      this.mouseFocus = true;
-    } else {
-      evt.preventDefault();
-    }
-    this.buttonTarget = (evt.target === this.prevButton || evt.target === this.nextButton);
-    this.bigStep = false;
-    this.pushX = evt.clientX;
-    this.vClick = this.v;
-    this.v = this.f = 0;
-    this.pushed = true;
-    this.addEventListeners();
-    setTimeout(() => this.processMoving(), 50);
   }
 
   processMoving() {
@@ -259,6 +250,22 @@ export class CustomSlider {
     }
   }
 
+  handlePointerDown(evt) {
+    if (evt.target.classList.contains(this.options.interactiveClass)) {
+      this.mouseFocus = true;
+    } else {
+      evt.preventDefault();
+    }
+    this.buttonTarget = (evt.target === this.prevButton || evt.target === this.nextButton);
+    this.bigStep = false;
+    this.pushX = evt.clientX;
+    this.vClick = this.v;
+    this.v = this.f = 0;
+    this.pushed = true;
+    this.addEventListeners();
+    setTimeout(() => this.processMoving(), 50);
+  }
+
   handlePointerMove(evt) {
     if (this.pushed) {
       if (!(evt.buttons & 1)) {
@@ -267,6 +274,7 @@ export class CustomSlider {
       }
       this.f += evt.movementX;
       this.scroll(evt.movementX);
+      // this.x1 = this.x;  //After 'pointerUp' timer will fire at least once and will set x1=x
     }
   }
 
@@ -289,4 +297,12 @@ export class CustomSlider {
           evt.stopPropagation();
   }
 
+  handleFocusIn(evt) {
+    if (this.mouseFocus) {
+      this.mouseFocus = false;
+    } else {
+      const offset = this.getOffset(evt.target, this.tape) + this.interactiveWidth / 2;
+      this.jump(this.boxWidth / 2 - offset);
+    }
+  }
 }
