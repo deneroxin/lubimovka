@@ -40,14 +40,21 @@ function addTemplate(name) {
     templates[name] = template;
 }
 
+addTemplate('gallery__item');
 addTemplate('announcement');
 addTemplate('play');
 addTemplate('person');
 
 const fill = {
+  gallery__item: (element, data) => {
+    const image = element.querySelector('.gallery__image');
+    image.src = `./images/gallery/${data.image}-low.jpg`;
+    image.alt = data.alt;
+    return image;
+  },
   announcement: (element, data) => {
     const image = element.querySelector('.announcement__image')
-    image.src = `./images/announcement/${data.image}.jpg`;
+    image.src = `./images/playbill/${data.image}.jpg`;
     image.alt = data.title;
     Object.keys(data).forEach(key =>
       element.querySelector(`.announcement__${key}`).textContent = data[key]);
@@ -69,10 +76,17 @@ const fill = {
     const dataName = data.name.split(' ');
     name.forEach((el, i) => el.textContent = dataName[i]);
     element.querySelector('.person__position').textContent = data.position;
-  }
+  },
 };
 
 const create = {
+  gallery__item: (data) => {
+    const element = templates['gallery__item'].cloneNode(true);
+    const image = fill.gallery__item(element, data);
+    image.addEventListener('click', handleGalleryItemClick);
+    image.setAttribute('tabindex', '0');
+    return element;
+  },
   announcement: (data) => {
     const element = templates['announcement'].cloneNode(true);
     fill.announcement(element, data);
@@ -90,7 +104,7 @@ const create = {
     fill.person(element, data);
     //Set event listeners if necessary
     return element;
-  }
+  },
 };
 
 function setupSliders() {
@@ -117,5 +131,24 @@ function setupPlaybillSingle() {
   });
 }
 
+function fillInGallery() {
+  const container = document.querySelector('.gallery__container');
+  const dataCopy = initialData.gallery.slice();
+  for (let n = container.getAttribute('data-num-elements') || 4;
+           n > 0 && dataCopy.length;
+           n--)
+  {
+    const idx = Math.floor(Math.random() * dataCopy.length);
+    container.append(create['gallery__item'](dataCopy[idx]));
+    const lastItem = dataCopy.pop();
+    if (idx != dataCopy.length) dataCopy[idx] = lastItem;
+  }
+}
+
+function handleGalleryItemClick(evt) {
+  console.log('Open popup');
+}
+
 setupSliders();
 setupPlaybillSingle();
+fillInGallery();

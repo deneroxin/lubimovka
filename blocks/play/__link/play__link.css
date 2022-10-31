@@ -2,7 +2,3 @@
   position: relative;
   width: 100%;
 }
-
-.play__link:focus-visible {
-  outline: 2px dashed var(--color-coal);
-}

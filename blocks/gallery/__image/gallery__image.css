@@ -1,0 +1,13 @@
+.gallery__image {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+.gallery__image:focus-visible {
+  outline: none;
+  border: 4px dashed var(--color-coal);
+}

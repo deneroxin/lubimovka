@@ -1,0 +1,15 @@
+.gallery__container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .gallery__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
