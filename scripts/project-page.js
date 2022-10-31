@@ -1,15 +1,20 @@
 console.log('Script attached');
 
-// Скопировать текст каждой кнопки в свойство "content" её псевдо-элемента ::before,
-// с помощью которого выполнена анимация кнопки и требует дублирования текста кнопки
-function prepareAnimatedButtons(container) {
-  const buttons = Array.from(container.querySelectorAll('.button'));
-  buttons.forEach(button =>
-    button.setAttribute('data-before', button.textContent));
+// Функция копирует текст каждой кнопки в свойство "content" её псевдо-элемента ::before,
+// так как анимация кнопки требует совпадения текста у кнопки и у дублирующего слоя
+function prepareAnimatedButtons() {
+  function prepareAnimatedButtons(container) {
+    const buttons = Array.from(container.querySelectorAll('.button'));
+    buttons.forEach(button =>
+      button.setAttribute('data-before', button.textContent));
+  }
+  prepareAnimatedButtons(document);
+  const allTemplates = Array.from(document.querySelectorAll('template'));
+  allTemplates.forEach(template =>
+    prepareAnimatedButtons(template.content));
 }
 
-prepareAnimatedButtons(document);
-
+prepareAnimatedButtons();
 
 
 
@@ -46,7 +51,6 @@ const fill = {
     image.alt = data.title;
     Object.keys(data).forEach(key =>
       element.querySelector(`.announcement__${key}`).textContent = data[key]);
-    prepareAnimatedButtons(element);
   },
   play: (element, data) => {
     element.querySelector('.play__title').textContent = data.title;
@@ -56,7 +60,6 @@ const fill = {
     const cityYear = element.querySelectorAll('.play__city-year');
     cityYear[0].textContent = data.city;
     cityYear[1].textContent = data.year;
-    prepareAnimatedButtons(element);
   },
   person: (element, data) => {
     const photo = element.querySelector('.person__photo');
@@ -100,7 +103,7 @@ function setupSliders() {
       fillChild: fill[dataType],
       interactiveClass: slider.getAttribute('data-interactive'),
       cyclic: Boolean(slider.getAttribute('data-cyclic')),
-      numChildrenPresent: slider.getAttribute('data-present') || 7
+      numChildrenPresent: slider.getAttribute('data-present')
     });
   });
 }

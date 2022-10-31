@@ -4,9 +4,9 @@
   max-width: 100%;
   align-self: center;
   --custom-slider__active: 1;
-  --custom-slider__vertical-position: 75%;
+  --custom-slider__vertical-position: 220px;
   --custom-slider__button-size: 50px;
-  --custom-slider__arrow-size: 20px;
+  --custom-slider__arrow-size: 30px;
 }
 
 @media (max-width: 480px) {

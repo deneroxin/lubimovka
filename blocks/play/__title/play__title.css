@@ -1,16 +1,19 @@
 .play__title {
   margin: 0;
   box-sizing: border-box;
-  padding: 24px;
+  --padding: 24px;
+  padding: var(--padding);
+  height: calc(100% - var(--padding));
   font-family: 'Neue Machina';
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: -0.01em;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .play__title {
-    padding: 16px;
+    --padding: 16px;
   }
 }
