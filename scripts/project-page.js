@@ -50,7 +50,6 @@ const fill = {
     const image = element.querySelector('.gallery__image');
     image.src = `./images/gallery/${data.image}-low.jpg`;
     image.alt = data.alt;
-    return image;
   },
   announcement: (element, data) => {
     const image = element.querySelector('.announcement__image')
@@ -82,9 +81,8 @@ const fill = {
 const create = {
   gallery__item: (data) => {
     const element = templates['gallery__item'].cloneNode(true);
-    const image = fill.gallery__item(element, data);
-    image.addEventListener('click', handleGalleryItemClick);
-    image.setAttribute('tabindex', '0');
+    fill.gallery__item(element, data);
+    element.addEventListener('click', () => handleGalleryItemClick(data));
     return element;
   },
   announcement: (data) => {
@@ -107,6 +105,14 @@ const create = {
   },
 };
 
+let keyboardOwner = null;
+
+window.addEventListener('keydown', evt => {
+  if (keyboardOwner) keyboardOwner.handleKeyDown(evt);
+});
+
+function setKeyboardOwner(owner) { keyboardOwner = owner }
+
 function setupSliders() {
   const sliders = Array.from(document.querySelectorAll('.custom-slider'));
   sliders.forEach(slider => {
@@ -117,7 +123,8 @@ function setupSliders() {
       fillChild: fill[dataType],
       interactiveClass: slider.getAttribute('data-interactive'),
       cyclic: Boolean(slider.getAttribute('data-cyclic')),
-      numChildrenPresent: slider.getAttribute('data-present')
+      numChildrenPresent: slider.getAttribute('data-present'),
+      setKeyboardOwner
     });
   });
 }
@@ -145,8 +152,9 @@ function fillInGallery() {
   }
 }
 
-function handleGalleryItemClick(evt) {
-  console.log('Open popup');
+function handleGalleryItemClick(data) {
+  const idx = initialData.gallery.indexOf(data);
+  console.log('Open popup ' + idx);
 }
 
 setupSliders();
