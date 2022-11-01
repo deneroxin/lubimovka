@@ -14,6 +14,8 @@ export class CustomSlider {
     this.tape = box.querySelector('.custom-slider__tape');
     this.prevButton = box.querySelector('.custom-slider__button_action_prev');
     this.nextButton = box.querySelector('.custom-slider__button_action_next');
+    this.prevButton.setAttribute('tabindex', '-1');
+    this.nextButton.setAttribute('tabindex', '-1');
     this.buttonsVisible = Number(hasButtons) << 1;
     this.isButtonVisible = [false, null, false];
     this.scroll = (options.cyclic ? this.scrollCyclic : this.scrollFinite);
@@ -34,6 +36,7 @@ export class CustomSlider {
     this.m = 0.2;
     this.m1 = 0.2;
     this.pushX = null;
+    this.pushTarget = null;
     this.x1 = this.x = this.v = 0;
     this.vClick = 0;
     this.mouse = false;
@@ -48,15 +51,17 @@ export class CustomSlider {
     this.click = (evt => this.handleClick(evt));
     this.focusin = (evt => this.handleFocusIn(evt));
     this.move = (evt => this.handlePointerMove(evt));
-    this.up = (() => this.handlePointerUp());
+    this.up = (evt => this.handlePointerUp(evt));
     this.cancel = (() => this.handlePointerCancel());
+    this.stepBack = (() => this.jump(this.x1 + this.step));
+    this.stepForward = (() => this.jump(this.x1 - this.step));
   }
 
   setupEventListeners() {
     window.addEventListener('resize', () => this.handleResize());
     this.box.addEventListener('scroll', evt => evt.currentTarget.scrollLeft = 0);
-    this.prevButton.addEventListener('click', () => this.jump(this.x1 + this.step));
-    this.nextButton.addEventListener('click', () => this.jump(this.x1 - this.step));
+    this.prevButton.addEventListener('click', this.stepBack);
+    this.nextButton.addEventListener('click', this.stepForward);
   }
 
   addBasicEventListeners() {
@@ -189,6 +194,12 @@ export class CustomSlider {
     // console.log('>--');
   }
 
+  stopTape() {
+    this.v = 0;
+    this.x1 = this.x;
+    this.bigStep = false;
+  }
+
   scrollFinite(step) {
     this.x += step;
     while (this.x < this.leftEdge
@@ -199,16 +210,14 @@ export class CustomSlider {
         this.addLeftElement();
     if (this.x + this.tapeWidth <= this.boxWidth && this.start + this.n == this.options.dataSource.length) {
       this.x = this.boxWidth - this.tapeWidth;
-      this.v = 0;
-      this.bigStep = false;
+      this.stopTape();
       this.hideButton(1);
     } else {
       this.showButton(1);
     }
     if (this.x >= 0 && this.start == 0) {
       this.x = 0;
-      this.v = 0;
-      this.bigStep = false;
+      this.stopTape();
       this.hideButton(-1);
     } else {
       this.showButton(-1);
@@ -256,17 +265,19 @@ export class CustomSlider {
     } else {
       evt.preventDefault();
     }
+    this.pushTarget = evt.target;
     this.buttonTarget = (evt.target === this.prevButton || evt.target === this.nextButton);
-    this.bigStep = false;
     this.pushX = evt.clientX;
     this.vClick = this.v;
     this.v = this.f = 0;
     this.pushed = true;
     this.addEventListeners();
     setTimeout(() => this.processMoving(), 50);
+    this.options.setKeyboardOwner(this);
   }
 
   handlePointerMove(evt) {
+    evt.preventDefault();
     if (this.pushed) {
       if (!(evt.buttons & 1)) {
         this.handlePointerCancel();
@@ -278,9 +289,10 @@ export class CustomSlider {
     }
   }
 
-  handlePointerUp() {
+  handlePointerUp(evt) {
     if (this.pushed) {
       if (Math.abs(this.f) > this.fThreshold) this.v += this.m * this.f;
+      if (!(this.buttonTarget && evt.target === this.pushTarget)) this.bigStep = false;
       this.handlePointerCancel();
     }
   }
@@ -303,6 +315,33 @@ export class CustomSlider {
     } else {
       const offset = this.getOffset(evt.target, this.tape) + this.interactiveWidth / 2;
       this.jump(this.boxWidth / 2 - offset);
+    }
+    this.options.setKeyboardOwner(this);
+  }
+
+  handleKeyDown(evt) {
+    switch(evt.keyCode) {
+    case 37:
+    case 100:
+      if (this.isButtonVisible[0]) this.stepBack();
+      break;
+    case 39:
+    case 102:
+      if (this.isButtonVisible[2]) this.stepForward();
+      break;
+    case 219:
+      if (this.options.cyclic) {
+        this.jump(this.x1 + this.tapeFullWidth / 2);
+      } else {
+        this.jump(this.x + this.tapeFullWidth);
+      }
+      break;
+    case 221:
+      if (this.options.cyclic) {
+        this.jump(this.x1 - this.tapeFullWidth / 2);
+      } else {
+        this.jump(this.x - this.tapeFullWidth);
+      }
     }
   }
 }
