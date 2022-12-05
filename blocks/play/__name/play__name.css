@@ -5,8 +5,8 @@
   text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .play__name {
     display: inline;
   }
-}
+} */

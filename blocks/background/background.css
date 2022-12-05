@@ -10,3 +10,7 @@
   font-family: 'Formular', 'Arial', sans-serif;
   background-color: var(--color-main-background);
 }
+
+.body_frozen {
+  overflow: hidden;
+}

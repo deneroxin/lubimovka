@@ -1,0 +1,29 @@
+.popup-slider {
+  --shift-x: 0;
+  --shift-y: 0;
+  --scale-x: 1;
+  --scale-y: 1;
+  --pan-x: -25%;
+  --pan-y: -25%;
+  --trans-dur: 1s;
+  --trans-dur-back: 0s;
+  touch-action: none;
+  background-color: #000d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--trans-dur-back) ease, visibility 0s var(--trans-dur-back);
+  box-sizing: border-box;
+  padding: calc(0px + (20 - 0) * (100vw - 768px) / (1440 - 768));
+}
+
+@media (max-width: 768px) {
+  .popup-slider {
+    padding: 0;
+  }
+}
