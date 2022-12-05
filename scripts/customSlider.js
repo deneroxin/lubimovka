@@ -57,6 +57,10 @@ export class CustomSlider {
     this.stepForward = (() => this.jump(this.x1 - this.step));
   }
 
+aaa() {
+  console.log('aaa');
+}
+
   setupEventListeners() {
     window.addEventListener('resize', () => this.handleResize());
     this.box.addEventListener('scroll', evt => evt.currentTarget.scrollLeft = 0);
@@ -146,7 +150,7 @@ export class CustomSlider {
   jump(position) {
     this.bigStep = true;
     this.x1 = position;
-    this.processMoving();
+    this.startAnimation();
   }
 
   moveTape(position) {
@@ -232,31 +236,43 @@ export class CustomSlider {
     this.moveTape(this.x);
   }
 
+  continueAnimation() {
+    window.requestAnimationFrame(this.processMoving.bind(this));
+    if (++this.tick == 3) this.tick = 0;
+  }
+
+  startAnimation() {
+    this.continueAnimation();
+    this.tick = 0;
+  }
+
   processMoving() {
-    if (this.pushed) {
-      this.f *= this.fDecay;
-      setTimeout(() => this.processMoving(), 50);
-    } else {
-      if (this.bigStep) {
-        if (Math.abs(this.x1 - this.x) < 1) {
-          this.x = this.x1;
-          this.v = 0;
+    let keepAnimationRunning = true;
+    if (this.tick == 0) {
+      if (this.pushed) {
+        this.f *= this.fDecay;
+      } else {
+        if (this.bigStep) {
+          if (Math.abs(this.x1 - this.x) < 1) {
+            this.x = this.x1;
+            this.v = 0;
+          } else {
+            this.v = this.m1 * (this.x1 - this.x);
+            if (Math.abs(this.v) < 1) this.v = Math.sign(this.x1 - this.x);
+          }
+          this.scroll(this.v);
         } else {
-          this.v = this.m1 * (this.x1 - this.x);
-          if (Math.abs(this.v) < 1) this.v = Math.sign(this.x1 - this.x);
+          this.scroll(this.v);
+          this.x1 = this.x;
+          this.v *= this.vDecay;
         }
-        this.scroll(this.v);
-      } else {
-        this.scroll(this.v);
-        this.x1 = this.x;
-        this.v *= this.vDecay;
-      }
-      if (Math.abs(this.v) < 1) {
-        this.v = 0;
-      } else {
-        setTimeout(() => this.processMoving(), 50);
+        if (Math.abs(this.v) < 1) {
+          this.v = 0;
+          keepAnimationRunning = false;
+        }
       }
     }
+    if (keepAnimationRunning) this.continueAnimation();
   }
 
   handlePointerDown(evt) {
@@ -272,7 +288,7 @@ export class CustomSlider {
     this.v = this.f = 0;
     this.pushed = true;
     this.addEventListeners();
-    setTimeout(() => this.processMoving(), 50);
+    this.startAnimation();
     this.options.setKeyboardOwner(this);
   }
 

@@ -31,6 +31,7 @@ findVideos();
 
 import {initialData} from './initialData.js';
 import {CustomSlider} from './customSlider.js';
+import { PopupSlider } from './PopupSlider.js';
 
 
 const templates = {};
@@ -83,6 +84,9 @@ const create = {
     const element = templates['gallery__item'].cloneNode(true);
     fill.gallery__item(element, data);
     element.addEventListener('click', () => handleGalleryItemClick(data));
+    element.addEventListener('keydown', evt => {
+      if (evt.key === 'Enter') handleGalleryItemClick(data);
+    });
     return element;
   },
   announcement: (data) => {
@@ -111,7 +115,11 @@ window.addEventListener('keydown', evt => {
   if (keyboardOwner) keyboardOwner.handleKeyDown(evt);
 });
 
-function setKeyboardOwner(owner) { keyboardOwner = owner }
+function setKeyboardOwner(owner) {
+  const old = keyboardOwner;
+  keyboardOwner = owner;
+  return old;
+}
 
 function setupSliders() {
   const sliders = Array.from(document.querySelectorAll('.custom-slider'));
@@ -138,8 +146,8 @@ function setupPlaybillSingle() {
   });
 }
 
-function fillInGallery() {
-  const container = document.querySelector('.gallery__container');
+function setupGallery() {
+  let container = document.querySelector('.gallery__container');
   const dataCopy = initialData.gallery.slice();
   for (let n = container.getAttribute('data-num-elements') || 4;
            n > 0 && dataCopy.length;
@@ -150,13 +158,14 @@ function fillInGallery() {
     const lastItem = dataCopy.pop();
     if (idx != dataCopy.length) dataCopy[idx] = lastItem;
   }
+  container = document.querySelector('.popup-slider');
+  return new PopupSlider(container, initialData.gallery, setKeyboardOwner);
 }
 
 function handleGalleryItemClick(data) {
-  const idx = initialData.gallery.indexOf(data);
-  console.log('Open popup ' + idx);
+  if (!popupSlider.isOpened) popupSlider.open(data);
 }
 
 setupSliders();
 setupPlaybillSingle();
-fillInGallery();
+const popupSlider = setupGallery();

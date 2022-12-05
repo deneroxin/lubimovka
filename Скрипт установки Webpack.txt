@@ -1,0 +1,174 @@
+// Установить node.js
+https://nodejs.org/en/download/
+
+// Назначить альтернативный репозиторий
+npm set registry https://npm.prakticum-team.ru
+
+// Зайти на него (ввести выданный логин/пароль)
+// Username: cohort54
+// Password: l3Av7f9N2Dpx35afMSFOS
+// Email: cohort-54@ya.ru
+npm login
+
+// Выполнить инициализацию в папке проекта
+npm init
+
+// Установить webpack и все плагины к нему
+npm i webpack --save-dev
+npm i webpack-cli --save-dev
+npm i webpack-dev-server --save-dev
+npm i @babel/core --save-dev
+npm i @babel/preset-env --save-dev
+npm i core-js --save
+npm i babel-loader --save-dev
+npm i html-webpack-plugin --save-dev
+npm i clean-webpack-plugin --save-dev
+npm i css-loader --save-dev
+npm i mini-css-extract-plugin --save-dev
+npm i postcss-loader --save-dev
+npm i autoprefixer --save-dev
+npm i cssnano --save-dev
+
+// Настроить конфигурационные файлы:
+package.json
+webpack.config.js
+babel.config.js
+postcss.config.js
+
+// package.json
+
+{
+  "name": "praktikum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.14",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "core-js": "^3.26.0"
+  }
+}
+
+
+// webpack.config.js
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // подключили плагин
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
+
+module.exports = {
+    entry: {
+        main: './src/index.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js',
+        publicPath: ''
+    },
+    mode: 'development',
+    devServer: {
+        static: path.resolve(__dirname, './dist'),
+        compress: true,
+        port: 8080,
+        open: true
+    },
+    module: {
+        rules: [ // rules — это массив правил
+          // добавим в него объект правил для бабеля
+          {
+            // регулярное выражение, которое ищет все js файлы
+            test: /\.js$/,
+            // при обработке этих файлов нужно использовать babel-loader
+            use: 'babel-loader',
+            // исключает папку node_modules, файлы в ней обрабатывать не нужно
+            exclude: '/node_modules/'
+          },
+          {
+            // регулярное выражение, которое ищет все файлы с такими расширениями
+            test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+            type: 'asset/resource'
+          },
+          {
+            // применять это правило только к CSS-файлам
+            test: /\.css$/,
+            // при обработке этих файлов нужно использовать
+            // MiniCssExtractPlugin.loader и css-loader
+            use: [
+              MiniCssExtractPlugin.loader,
+              {
+                loader: 'css-loader',
+                options: { importLoaders: 1 }
+              },
+              'postcss-loader'
+            ],
+          }                  
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+          template: './src/index.html' // путь к файлу index.html
+        }),
+        new CleanWebpackPlugin(), // использовали плагин
+        new MiniCssExtractPlugin() // подключение плагина для объединения файлов        
+    ]     
+}
+
+
+// babel.config.js
+
+const presets = [
+    ['@babel/preset-env', { // какой пресет использовать
+      targets: { // какие версии браузеров поддерживать
+        edge: '17',
+        ie: '11',
+        firefox: '50',
+        chrome: '64',
+        safari: '11.1'
+      },
+  
+      // использовать полифиллы для браузеров из свойства target
+      // по умолчанию babel использует поллифиллы библиотеки core-js
+      useBuiltIns: "entry"
+    }]
+  ];
+  
+  module.exports = { presets };
+
+
+// postcss.config.js
+
+// подключите плагины в файл
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+
+module.exports = {
+  // подключите плагины к PostCSS
+  plugins: [
+    // подключите autoprefixer
+    autoprefixer,
+    // cssnano при подключении нужно передать объект опций
+    // { preset: default } говорит о том, что нужно использовать
+    // стандартные настройки минификации
+    cssnano({ preset: 'default' })
+  ]
+};

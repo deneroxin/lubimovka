@@ -1,0 +1,9 @@
+.popup-slider__box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-slider_zoom-mode .popup-slider__box {
+  overflow: hidden;
+}

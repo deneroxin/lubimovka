@@ -1,0 +1,18 @@
+.popup-slider__title {
+  grid-area: title;
+  margin: 0;
+  text-align: center;
+  font-family: 'Neue Machina';
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-snow-white);
+  filter: drop-shadow(-2px -1px 1px black) drop-shadow(2px 1px 1px black);
+}
+
+.popup-slider__title:last-child {
+  grid-area: position;
+}

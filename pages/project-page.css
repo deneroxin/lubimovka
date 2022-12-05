@@ -144,3 +144,11 @@
 @import url(../blocks/footer/__developer/footer__developer.css);
 @import url(../blocks/footer/__design-logo/footer__design-logo.css);
 @import url(../blocks/footer/__developer-link/footer__developer-link.css);
+
+@import url(../blocks/popup-slider/popup-slider.css);
+@import url(../blocks/popup-slider/_opened/popup-slider_opened.css);
+@import url(../blocks/popup-slider/__box/popup-slider__box.css);
+@import url(../blocks/popup-slider/__hint/popup-slider__hint.css);
+@import url(../blocks/popup-slider/__hint-picture/popup-slider__hint-picture.css);
+@import url(../blocks/popup-slider/__image/popup-slider__image.css);
+@import url(../blocks/popup-slider/__title/popup-slider__title.css);
